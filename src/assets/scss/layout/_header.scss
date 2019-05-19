@@ -32,7 +32,7 @@
 				display: block;
 				position: absolute;
 				top: calc(-3.5rem - 1px);
-				left: calc(50% - #{_size(border-width) * 1});
+				left: calc(50% + 2px);
 				width: _size(border-width);
 				height: calc(3.5rem + 1px);
 				background: _palette(border);
@@ -48,15 +48,15 @@
 		}
 
 		.logo {
-			width: 5.5rem;
-			height: 5.5rem;
-			line-height: 5.5rem;
-			border: solid _size(border-width) _palette(border);
+			width: 8rem;
+			height: 8rem;
+			line-height: 10rem;
+			border: solid 4px _palette(border);
 			border-radius: 100%;
 
 			.icon {
 				&:before {
-					font-size: 2rem;
+					font-size: 4rem;
 				}
 			}
 		}
@@ -197,13 +197,13 @@
 			}
 
 			.logo {
-				width: 4.75rem;
-				height: 4.75rem;
-				line-height: 4.75rem;
+				width: 6rem;
+				height: 6rem;
+				line-height: 8rem;
 
 				.icon {
 					&:before {
-						font-size: 1.75rem;
+						font-size: 3.5rem;
 					}
 				}
 			}
@@ -220,7 +220,7 @@
 		}
 
 		@include breakpoint(xsmall) {
-			padding: 1.5rem 0;
+			padding: .5rem 0;
 
 			.content {
 				.inner {

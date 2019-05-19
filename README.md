@@ -1,19 +1,50 @@
-# gatsby-starter-dimension
+# Yet another Github page.
 
-**This is a starter for Gatsby.js V2.**
+> Just another Github personal page built with GatsbyJS.
 
-**The older V1 version of this starter can be found on the v1 branch:**
+[![basic-merchandising](https://imgur.com/LNOYczf.png)](https://github.com/leopq)
 
-Gatsby.js V2 starter based on the Dimension site template, designed by HTML5 UP. Check out https://codebushi.com/gatsby-starters/ for more Gatsby starters and templates.
+## Quickstart
+Firsts thing's first:
+* Create a github user.
+* Take note of this user (in the steps above, we'll be using `johndoe`, yet be sure to replace with your actual user for them to work).
+* Open a terminal and fire the commands below:
+```
+$ git clone https://github.com/leopq/leopq.github.io johndoe.github.io
+```
 
-## Preview
+```
+$ cd johndoe.github.io
+```
 
-https://gatsby-dimension.surge.sh/
+In order to install the project dependencies, run:
 
-## Installation
+```
+$ yarn
+```
 
-Install this starter (assuming Gatsby is installed) by running from your CLI:
-<br/>
-`gatsby new gatsby-starter-dimension https://github.com/codebushi/gatsby-starter-dimension`
+#### Customizing
 
-Run `gatsby develop` in the terminal to start the dev site.
+From the root of the cloned repository, run:
+
+```sh
+$ yarn dev
+```
+
+#### Deploy
+
+In your template, you can declare the ngx-credit-card-br as the following:
+```sh
+$ yarn build
+```
+
+```sh
+$ git subtree push --prefix public origin gh-pages
+```
+
+### And that's all there is about it.
+* Any doubts? Fell free to open an issue.
+* Improvements? Pull requests are always come!
+* Suggestions? Of course: Let's [talk](https://twitter.com/leopq)!
+
+##### MIT @ Leonardo Quevedo. 2019.
