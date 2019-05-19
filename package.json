@@ -1,8 +1,8 @@
 {
-  "name": "gatsby-starter-dimension-v2",
-  "description": "Gatsby Starter - Dimension V2",
+  "name": "github-gatsby-page",
+  "description": "Yet Another Github Page",
   "version": "1.0.0",
-  "author": "Hunter Chang",
+  "author": "Leonardo Quevedo",
   "dependencies": {
     "gatsby": "^2.2.9",
     "gatsby-plugin-manifest": "^2.0.24",
@@ -23,13 +23,15 @@
     "build": "gatsby build",
     "deploy": "node .bin/deploy",
     "format": "prettier --write '**/*.js'",
+    "deploy:github": "npm run build && node ./scripts/deploy-github",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "devDependencies": {
+    "gh-pages": "^2.0.1",
     "prettier": "^1.14.2"
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/gatsbyjs/gatsby-starter-default"
+    "url": "https://github.com/leopq/leopq.github.io"
   }
 }
