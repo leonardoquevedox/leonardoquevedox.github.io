@@ -11,7 +11,7 @@ const shell = require('shelljs')
 const exec = shell.exec
 const path = require('path')
 
-const rootPath = path.resolve(__dirname, '../../../')
+const rootPath = path.resolve(__dirname, '../../')
 
 const build = async () => {
   const commitMsg = 'chore(): Updates Github page version.'

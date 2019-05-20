@@ -24,7 +24,6 @@
     "build": "gatsby build",
     "deploy": "node .bin/deploy",
     "format": "prettier --write '**/*.js'",
-    "deploy:github": "npm run build && node ./.bin/publish/github/index.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "devDependencies": {
