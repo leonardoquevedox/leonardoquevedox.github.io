@@ -20,7 +20,7 @@
   ],
   "license": "MIT",
   "scripts": {
-    "dev": "gatsby develop",
+    "dev": "gatsby develop --port 3000",
     "build": "gatsby build",
     "clear": "rm -rf *.js.map *.eot *-map.json *.stats.json *.woff* *.jpg *.svg *.css *.ttf *.html workbox-* offline-* d 404 page-2 *.webmanifest",
     "copy": "cp -rf public/* ./",
