@@ -1,7 +1,7 @@
 {
   "name": "github-gatsby-page",
   "description": "Yet Another Github Page",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "author": "Leonardo Quevedo",
   "homepage": "./",
   "dependencies": {
