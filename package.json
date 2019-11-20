@@ -6,7 +6,7 @@
   "homepage": "./",
   "license": "MIT",
   "scripts": {
-    "dev": "gatsby develop --port 3000",
+    "start": "gatsby develop --port 3000",
     "build": "gatsby build -d docs",
     "deploy": "gatsby build && node scripts/deploy"
   },

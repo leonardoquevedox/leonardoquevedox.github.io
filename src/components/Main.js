@@ -1,13 +1,14 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 
-import pic01 from '../images/pic01.jpg'
-import pic02 from '../images/pic02.jpg'
-import pic03 from '../images/pic03.jpg'
+import pic01 from '../assets/img/pic01.jpg'
+import pic02 from '../assets/img/pic02.jpg'
+import pic03 from '../assets/img/pic03.jpg'
 
 class Main extends React.Component {
   render() {
-    let close = (
+    const close = (
+      /* eslint-disable-next-line */
       <div
         className="close"
         onClick={() => {
@@ -20,25 +21,22 @@ class Main extends React.Component {
       <div
         ref={this.props.setWrapperRef}
         id="main"
-        style={this.props.timeout ? { display: 'flex' } : { display: 'none' }}
-      >
+        style={this.props.timeout ? { display: 'flex' } : { display: 'none' }}>
         <article
           id="intro"
           className={`${this.props.article === 'intro' ? 'active' : ''} ${
             this.props.articleTimeout ? 'timeout' : ''
           }`}
-          style={{ display: 'none' }}
-        >
+          style={{ display: 'none' }}>
           <h2 className="major">Projetos</h2>
           {close}
           <span className="image main">
             <img src={pic01} alt="" />
           </span>
           <p>
-            Aenean ornare velit lacus, ac varius enim ullamcorper eu. Proin
-            aliquam facilisis ante interdum congue. Integer mollis, nisl amet
-            convallis, porttitor magna ullamcorper, amet egestas mauris. Ut
-            magna finibus nisi nec lacinia. Nam maximus erat id euismod egestas.
+            Aenean ornare velit lacus, ac varius enim ullamcorper eu. Proin aliquam facilisis ante
+            interdum congue. Integer mollis, nisl amet convallis, porttitor magna ullamcorper, amet
+            egestas mauris. Ut magna finibus nisi nec lacinia. Nam maximus erat id euismod egestas.
             By the way, check out my <a href="#work">awesome work</a>.
           </p>
         </article>
@@ -48,18 +46,16 @@ class Main extends React.Component {
           className={`${this.props.article === 'work' ? 'active' : ''} ${
             this.props.articleTimeout ? 'timeout' : ''
           }`}
-          style={{ display: 'none' }}
-        >
+          style={{ display: 'none' }}>
           <h2 className="major">Ideias</h2>
           {close}
           <span className="image main">
             <img src={pic02} alt="" />
           </span>
           <p>
-            Adipiscing magna sed dolor elit. Praesent eleifend dignissim arcu,
-            at eleifend sapien imperdiet ac. Aliquam erat volutpat. Praesent
-            urna nisi, fringila lorem et vehicula lacinia quam. Integer
-            sollicitudin mauris nec lorem luctus ultrices.
+            Adipiscing magna sed dolor elit. Praesent eleifend dignissim arcu, at eleifend sapien
+            imperdiet ac. Aliquam erat volutpat. Praesent urna nisi, fringila lorem et vehicula
+            lacinia quam. Integer sollicitudin mauris nec lorem luctus ultrices.
           </p>
         </article>
 
@@ -68,20 +64,18 @@ class Main extends React.Component {
           className={`${this.props.article === 'about' ? 'active' : ''} ${
             this.props.articleTimeout ? 'timeout' : ''
           }`}
-          style={{ display: 'none' }}
-        >
+          style={{ display: 'none' }}>
           <h2 className="major">Sobre</h2>
           {close}
           <span className="image main">
             <img src={pic03} alt="" />
           </span>
           <p>
-            <b>24 anos.</b> Porto alegrense de nascença, <b>cidadão do mundo</b>{' '}
-            de coração. <b>Inquieto</b> por natureza. Uma vida movida e norteada
-            pela <b>inovação</b>. Pronto para encarar os <b>desafios</b> com
-            soluções <b>criativas</b>. Sempre em busca do{' '}
-            <b>novo e do desconhecido</b>. Focado em criar experiências
-            incríveis <b>de humanos para humanos</b>.
+            <b>24 anos.</b> Porto alegrense de nascença, <b>cidadão do mundo</b> de coração.{' '}
+            <b>Inquieto</b> por natureza. Uma vida movida e norteada pela <b>inovação</b>. Pronto
+            para encarar os <b>desafios</b> com soluções <b>criativas</b>. Sempre em busca do{' '}
+            <b>novo e do desconhecido</b>. Focado em criar experiências incríveis{' '}
+            <b>de humanos para humanos</b>.
           </p>
         </article>
 
@@ -90,8 +84,7 @@ class Main extends React.Component {
           className={`${this.props.article === 'contact' ? 'active' : ''} ${
             this.props.articleTimeout ? 'timeout' : ''
           }`}
-          style={{ display: 'none' }}
-        >
+          style={{ display: 'none' }}>
           {close}
           <h2 className="major">Contato</h2>
           <p>
@@ -136,7 +129,7 @@ Main.propTypes = {
   articleTimeout: PropTypes.bool,
   onCloseArticle: PropTypes.func,
   timeout: PropTypes.bool,
-  setWrapperRef: PropTypes.func.isRequired,
+  setWrapperRef: PropTypes.func.isRequired
 }
 
 export default Main
