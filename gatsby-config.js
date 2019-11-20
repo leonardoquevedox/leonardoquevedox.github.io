@@ -1,5 +1,5 @@
 module.exports = {
-  assetPrefix: 'public',
+  pathPrefix: '/reponame',
   siteMetadata: {
     title: 'Leonardo Quevedo',
     author: 'Leonardo Quevedo',
