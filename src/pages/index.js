@@ -1,9 +1,9 @@
 import React from 'react'
-import Layout from '../components/layout'
 
-import Header from '../components/Header'
-import Main from '../components/Main'
-import Footer from '../components/Footer'
+import Layout from 'components/Layout'
+import Header from 'components/Header'
+import Main from 'components/Main'
+import Footer from 'components/Footer'
 
 class IndexPage extends React.Component {
   constructor(props) {
@@ -15,32 +15,29 @@ class IndexPage extends React.Component {
       article: '',
       loading: 'is-loading'
     }
-    this.handleOpenArticle = this.handleOpenArticle.bind(this)
-    this.handleCloseArticle = this.handleCloseArticle.bind(this)
-    this.setWrapperRef = this.setWrapperRef.bind(this);
-    this.handleClickOutside = this.handleClickOutside.bind(this);
   }
 
-  componentDidMount () {
-    this.timeoutId = setTimeout(() => {
-        this.setState({loading: ''});
-    }, 100);
-    document.addEventListener('mousedown', this.handleClickOutside);
+  componentDidMount() {
+    this.timeoutReference = setTimeout(() => {
+      this.setState({ loading: '' })
+    }, 100)
+    document.addEventListener('mousedown', event => {
+      this.handleOutsideClick(event)
+    })
   }
 
-  componentWillUnmount () {
-    if (this.timeoutId) {
-        clearTimeout(this.timeoutId);
+  componentWillUnmount() {
+    if (this.timeoutReference) {
+      clearTimeout(this.timeoutReference)
     }
-    document.removeEventListener('mousedown', this.handleClickOutside);
+    document.removeEventListener('mousedown', this.handleOutsideClick)
   }
 
-  setWrapperRef(node) {
-    this.wrapperRef = node;
+  setWrapperRef(ref) {
+    this.wrapperRef = ref
   }
 
-  handleOpenArticle(article) {
-
+  onOpenArticle(article) {
     this.setState({
       isArticleVisible: !this.state.isArticleVisible,
       article
@@ -57,11 +54,9 @@ class IndexPage extends React.Component {
         articleTimeout: !this.state.articleTimeout
       })
     }, 350)
-
   }
 
-  handleCloseArticle() {
-
+  onCloseArticle() {
     this.setState({
       articleTimeout: !this.state.articleTimeout
     })
@@ -78,35 +73,40 @@ class IndexPage extends React.Component {
         article: ''
       })
     }, 350)
-
   }
 
-  handleClickOutside(event) {
+  handleOutsideClick(event) {
     if (this.wrapperRef && !this.wrapperRef.contains(event.target)) {
       if (this.state.isArticleVisible) {
-        this.handleCloseArticle();
+        this.onCloseArticle()
       }
     }
   }
 
   render() {
+    const { location } = this.props
+    const { loading, isArticleVisible, timeout, articleTimeout, article } = this.state
+
     return (
-      <Layout location={this.props.location}>
-        <div className={`body ${this.state.loading} ${this.state.isArticleVisible ? 'is-article-visible' : ''}`}>
-          <div id="wrapper">
-            <Header onOpenArticle={this.handleOpenArticle} timeout={this.state.timeout} />
-            <Main
-              isArticleVisible={this.state.isArticleVisible}
-              timeout={this.state.timeout}
-              articleTimeout={this.state.articleTimeout}
-              article={this.state.article}
-              onCloseArticle={this.handleCloseArticle}
-              setWrapperRef={this.setWrapperRef}
+      <Layout location={location}>
+        <article className={`body ${loading} ${isArticleVisible ? 'is-article-visible' : ''}`}>
+          <section id="wrapper">
+            <Header
+              onOpenArticle={selectedArticle => this.onOpenArticle(selectedArticle)}
+              timeout={timeout}
             />
-            <Footer timeout={this.state.timeout} />
-          </div>
-          <div id="bg"></div>
-        </div>
+            <Main
+              isArticleVisible={isArticleVisible}
+              timeout={timeout}
+              articleTimeout={articleTimeout}
+              article={article}
+              onCloseArticle={() => this.onCloseArticle()}
+              setWrapperRef={ref => this.setWrapperRef(ref)}
+            />
+            <Footer timeout={timeout} />
+          </section>
+          <section id="bg" />
+        </article>
       </Layout>
     )
   }
