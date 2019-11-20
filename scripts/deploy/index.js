@@ -15,8 +15,7 @@ const run = async () => {
   await exec(`git commit -m '${commitMsg}'`, { cwd: rootPath })
   await exec(`cp ./CNAME ./public/CNAME`, { cwd: rootPath })
   await exec(`git subtree push --prefix public origin gh-pages`, { cwd: rootPath })
-  await exec(`git push origin master`, { cwd: rootPath })
-  await exec(`git push origin gh-pages`, { cwd: rootPath })
+  await exec(`git push origin`, { cwd: rootPath })
   process.exit()
 }
 
