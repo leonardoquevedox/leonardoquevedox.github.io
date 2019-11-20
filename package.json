@@ -7,8 +7,8 @@
   "license": "MIT",
   "scripts": {
     "dev": "gatsby develop --port 3000",
-    "build": "gatsby build",
-    "deploy": "gatsby build && gh-pages -d public"
+    "build": "gatsby build -d docs",
+    "deploy": "gatsby build && node scripts/deploy"
   },
   "dependencies": {
     "gatsby": "^2.18.0",
