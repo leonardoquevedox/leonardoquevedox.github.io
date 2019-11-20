@@ -8,7 +8,7 @@
   "scripts": {
     "dev": "gatsby develop --port 3000",
     "build": "gatsby build",
-    "deploy": "node scripts/deploy"
+    "deploy": "gatsby build && gh-pages -d public"
   },
   "dependencies": {
     "gatsby": "^2.18.0",
