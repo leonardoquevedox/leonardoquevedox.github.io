@@ -31,7 +31,7 @@
     @include vendor('transition', 'background-color #{_duration(bg)} ease-in-out');
     @include vendor('transition-delay', '#{_duration(intro)}');
     background-image: linear-gradient(to top, #{_palette(bg-overlay)}, #{_palette(bg-overlay)}),
-      url('../../assets/img/overlay.png');
+      url('../assets/img/overlay.png');
     background-size: auto, 256px 256px;
     background-position: center, center;
     background-repeat: no-repeat, repeat;
@@ -44,7 +44,7 @@
       'transition',
       ('transform #{_duration(article)} ease-in-out', 'filter #{_duration(article)} ease-in-out')
     );
-    background-image: url('../../assets/img/bg.jpg');
+    background-image: url('../assets/img/bg.jpg');
     background-position: center;
     background-size: cover;
     background-repeat: no-repeat;

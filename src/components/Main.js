@@ -1,5 +1,4 @@
 import React from 'react'
-import PropTypes from 'prop-types'
 
 import pic01 from '../assets/img/pic01.jpg'
 import pic02 from '../assets/img/pic02.jpg'
@@ -88,7 +87,7 @@ class Main extends React.Component {
           {close}
           <h2 className="major">Contato</h2>
           <p>
-            Formulários de contato? Formal demais. <br />
+            Formulários de contato? Formais demais. <br />
             Só chamar em um dos canais abaixo ;)
           </p>
           <ul className="icons">
@@ -121,15 +120,6 @@ class Main extends React.Component {
       </div>
     )
   }
-}
-
-Main.propTypes = {
-  route: PropTypes.object,
-  article: PropTypes.string,
-  articleTimeout: PropTypes.bool,
-  onCloseArticle: PropTypes.func,
-  timeout: PropTypes.bool,
-  setWrapperRef: PropTypes.func.isRequired
 }
 
 export default Main
