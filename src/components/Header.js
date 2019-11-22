@@ -22,7 +22,6 @@ const Header = props => (
           article =>
             article && (
               <li key={article.href}>
-                {/* eslint-disable-next-line */}
                 <a
                   href="#"
                   onClick={() => {
