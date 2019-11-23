@@ -14,7 +14,8 @@ const run = async () => {
   await exec('git add .', { cwd: rootPath })
   await exec(`git subtree split --prefix public -b gh-pages`, { cwd: rootPath })
   await exec(`git commit -m '${commitMsg}'`, { cwd: rootPath })
-  await exec(`git push origin -f`, { cwd: rootPath })
+  await exec(`git push origin master -f`, { cwd: rootPath })
+  await exec(`git push origin gh-pages -f`, { cwd: rootPath })
   process.exit()
 }
 
