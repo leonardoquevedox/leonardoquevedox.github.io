@@ -9,7 +9,7 @@ export const articles = [
   },
   {
     href: 'ideas',
-    label: 'Open Source'
+    label: 'Projetos'
   },
   {
     href: 'contact',
