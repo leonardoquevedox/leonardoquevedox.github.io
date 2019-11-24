@@ -33,27 +33,64 @@ const Layout = ({ children, location }) => {
         <>
           <Helmet title={data.site.siteMetadata.title}>
             <html lang="pt-BR" />
-            {/* <title>
-              Psicóloga em São Leopoldo, Porto Alegre e Online | Psicóloga Priscila de Melo | Terapia
+            {/* Geneal */}
+            <title>
+              Leonardo Quevedo | Software, Inovação, JavaScript, Mobile, PWA, Open Source e
+              Atualidade.
             </title>
             <meta
               name="description"
-              content="Psicóloga clínica e social. Mestrado em Saúde Coletiva. Atendimentos individuais com crianças, adolescentes e adultos. Terapia de casal. Atendimento clínico."
+              content="Por Leonardo Quevedo, Software Engineer. JavaScript Coder. Coffee Drinker. Artificial Intelligence Enthusiast. PWAs specialist. Universal applications advocate."
             />
             <meta
               name="keywords"
-              content="Psicologia, Psicóloga, Terapia, Psicoterapia, Atendimento psicológico, Avaliação psicológica, Psicóloga infantil, Psicóloga criança, Psicóloga casal, Psicóloga São Leopoldo, Psicóloga Porto Alegre, Psicóloga Online"
+              content="Software, JavaScript, Mobile, PWA, Open Source, Discriminação Algorítmica, Sociedade, Hacktivismo."
             />
+
+            {/* Crawlers */}
             <meta name="robots" content="" />
             <meta name="revisit-after" content="1 day" />
             <meta name="language" content="Portuguese" />
+            <meta httpEquiv="Content-Type" content="text/html; charset=utf-8" />
 
-            <meta charset="UTF-8" />
+            {/* Google */}
+            <link rel="author" href="Leonardo Quevedo" />
+            <link rel="publisher" href="Leonardo Quevedo" />
+            <meta itemProp="name" content="leonardoquevedo:page:home | Leonardo Quevedo" />
             <meta
-              name="twitter:title"
-              content="Psicóloga Priscila de Melo | Psicóloga em São Leopoldo, Porto Alegre e Online"
+              itemProp="description"
+              content="Por Leonardo Quevedo, Software Engineer. JavaScript Coder. Coffee Drinker. Artificial Intelligence Enthusiast. PWAs specialist. Universal applications advocate."
             />
-            <link rel="shortcut icon" href="assets/images/favicon-2.png" type="image/x-icon" /> */}
+            <meta itemProp="image" content="https://i.imgur.com/8BYAMHC.png" />
+
+            {/* Facebook */}
+            <meta property="og:url" content="http://leonardoquevedo.com/" />
+            <meta property="og:site_name" content="leonardoquevedo.com" />
+            <meta
+              property="og:image"
+              content="https://i.imgur.com/8BYAMHC.png"
+            />
+            <meta property="og:type" content="website" />
+            <meta property="og:title" content="leonardoquevedo:page:home | Leonardo Quevedo" />
+            <meta
+              property="og:description"
+              content="Por Leonardo Quevedo, Software Engineer. JavaScript Coder. Coffee Drinker. Artificial Intelligence Enthusiast. PWAs specialist. Universal applications advocate."
+            />
+            <meta property="og:locale" content="pt_BR" />
+
+            {/* Twitter */}
+            <meta name="twitter:card" content="summary" />
+            <meta name="twitter:site" content="@leonardoquevedo" />
+            <meta name="twitter:title" content="leonardoquevedo:page:home | Leonardo Quevedo" />
+            <meta
+              name="twitter:description"
+              content="Por Leonardo Quevedo, Software Engineer. JavaScript Coder. Coffee Drinker. Artificial Intelligence Enthusiast. PWAs specialist. Universal applications advocate."
+            />
+            <meta name="twitter:creator" content="@leonardoquevedo" />
+            <meta
+              name="twitter:image:src"
+              content="https://i.imgur.com/8BYAMHC.png"
+            />
           </Helmet>
           {content}
         </>
