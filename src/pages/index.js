@@ -11,7 +11,7 @@ class IndexPage extends React.Component {
     this.state = {
       isArticleVisible: false,
       timeout: false,
-      articleTimeout: false,
+      isVisible: false,
       article: '',
       loading: 'is-loading'
     }
@@ -51,14 +51,14 @@ class IndexPage extends React.Component {
 
     setTimeout(() => {
       this.setState({
-        articleTimeout: !this.state.articleTimeout
+        isVisible: !this.state.isVisible
       })
     }, 350)
   }
 
   onCloseArticle() {
     this.setState({
-      articleTimeout: !this.state.articleTimeout
+      isVisible: !this.state.isVisible
     })
 
     setTimeout(() => {
@@ -85,7 +85,7 @@ class IndexPage extends React.Component {
 
   render() {
     const { location } = this.props
-    const { loading, isArticleVisible, timeout, articleTimeout, article } = this.state
+    const { loading, isArticleVisible, timeout, isVisible, article } = this.state
 
     return (
       <Layout location={location}>
@@ -98,7 +98,7 @@ class IndexPage extends React.Component {
             <Main
               isArticleVisible={isArticleVisible}
               timeout={timeout}
-              articleTimeout={articleTimeout}
+              isVisible={isVisible}
               article={article}
               onCloseArticle={() => this.onCloseArticle()}
               setWrapperRef={ref => this.setWrapperRef(ref)}

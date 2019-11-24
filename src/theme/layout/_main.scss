@@ -19,11 +19,7 @@
   display: none;
 
   article {
-    @include vendor('transform', 'translateY(0.25rem)');
-    @include vendor(
-      'transition',
-      ('opacity #{_duration(article)} ease-in-out', 'transform #{_duration(article)} ease-in-out')
-    );
+
     @include padding(2.5rem, 2.5rem, (2rem, 0, 1rem, 0));
     position: relative;
     width: 40rem;
@@ -32,11 +28,11 @@
     border-radius: _size(border-radius);
     opacity: 0;
 
-    &.timeout {
+    &.visible {
       display: none;
     }
 
-    &.active.timeout {
+    &.active.visible {
       @include vendor('transform', 'translateY(0)');
       opacity: 1;
     }

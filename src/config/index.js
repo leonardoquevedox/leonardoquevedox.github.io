@@ -5,7 +5,7 @@ export const articles = [
   },
   {
     href: 'content',
-    label: 'Artigos'
+    label: 'Conteúdo'
   },
   {
     href: 'ideas',
