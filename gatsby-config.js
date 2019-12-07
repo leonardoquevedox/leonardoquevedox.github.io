@@ -10,7 +10,7 @@ module.exports = {
     {
       resolve: `gatsby-plugin-manifest`,
       options: {
-        icon: 'src/assets/img/favicon.png' // This path is relative to the root of the site.
+        icon: 'resources/favicon.png' // This path is relative to the root of the site.
       }
     }
   ]
