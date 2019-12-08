@@ -16,15 +16,18 @@ class About extends React.Component {
         {posts &&
           posts.items &&
           posts.items.map(post => (
-            <div className="rss-post">
+            <a
+              key={post.link}
+              href={post.link}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="rss-post">
               <img className="rss-post__picture" alt="" src={post.thumbnail} />
               <div className="rss-post__description">
                 <h6 className="rss-post__title">{post.title}</h6>
-                <a href={post.link} target="_blank" rel="noopener noreferrer" className="rss-post__cta">
-                  <i className="icon fab fa-medium" />
-                </a>
+                <i className="icon fab fa-medium" />
               </div>
-            </div>
+            </a>
           ))}
       </article>
     )

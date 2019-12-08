@@ -19,7 +19,7 @@ class Contact extends React.Component {
           {socialProfiles.map(
             profile =>
               profile && (
-                <li>
+                <li key={profile.icon}>
                   <a href={profile.url} className={`icon fab fa-${profile.icon}`}>
                     <span className="label">{profile.label}</span>
                   </a>
