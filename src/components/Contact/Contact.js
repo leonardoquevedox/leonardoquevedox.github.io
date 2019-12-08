@@ -1,5 +1,8 @@
 import React from 'react'
-import { socialProfiles } from '../config'
+
+import pic01 from '../../assets/img/pic01.jpg'
+
+import { socialProfiles } from '../../config'
 
 class Contact extends React.Component {
   render() {
@@ -7,9 +10,11 @@ class Contact extends React.Component {
     return (
       <article
         id="contact"
-        className={`${article === 'contact' ? 'active' : ''} ${isVisible ? 'visible' : ''}`}
-        style={{ display: 'none' }}>
+        className={`${article === 'contact' ? 'active' : ''} ${isVisible ? 'visible' : ''}`}>
         {close}
+        <span className="image main">
+          <img src={pic01} alt="" />
+        </span>
         <h2 className="major">Contato</h2>
         <p>
           Formulários de contato? Formais demais! <br />
@@ -20,7 +25,11 @@ class Contact extends React.Component {
             profile =>
               profile && (
                 <li key={profile.icon}>
-                  <a href={profile.url} className={`icon fab fa-${profile.icon}`}>
+                  <a
+                    href={profile.url}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className={`icon fab fa-${profile.icon}`}>
                     <span className="label">{profile.label}</span>
                   </a>
                 </li>

@@ -1,15 +1,15 @@
 import React from 'react'
 
-import Contact from './Contact'
-import Ideas from './Ideas'
-import Content from './Content'
-import About from './About'
+import Contact from '../Contact/Contact'
+import Ideas from '../Ideas/Ideas'
+import Content from '../Content/Content'
+import About from '../About/About'
 
 class Main extends React.Component {
   render() {
     const close = (
       /* eslint-disable-next-line */
-      <div
+      <a
         className="close"
         onClick={() => {
           this.props.onCloseArticle()

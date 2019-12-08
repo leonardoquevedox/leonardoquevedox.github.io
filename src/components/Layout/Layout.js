@@ -3,7 +3,7 @@ import PropTypes from 'prop-types'
 import Helmet from 'react-helmet'
 import { StaticQuery, graphql } from 'gatsby'
 
-import '../theme/main.scss'
+import '../../theme/main.scss'
 
 const Layout = ({ children, location }) => {
   let content
@@ -66,10 +66,7 @@ const Layout = ({ children, location }) => {
             {/* Facebook */}
             <meta property="og:url" content="http://leonardoquevedo.com/" />
             <meta property="og:site_name" content="leonardoquevedo.com" />
-            <meta
-              property="og:image"
-              content="https://i.imgur.com/8BYAMHC.png"
-            />
+            <meta property="og:image" content="https://i.imgur.com/8BYAMHC.png" />
             <meta property="og:type" content="website" />
             <meta property="og:title" content="leonardoquevedo:page:home | Leonardo Quevedo" />
             <meta
@@ -87,10 +84,7 @@ const Layout = ({ children, location }) => {
               content="Por Leonardo Quevedo, Software Engineer. JavaScript Coder. Coffee Drinker. Artificial Intelligence Enthusiast. PWAs specialist. Universal applications advocate."
             />
             <meta name="twitter:creator" content="@leonardoquevedo" />
-            <meta
-              name="twitter:image:src"
-              content="https://i.imgur.com/8BYAMHC.png"
-            />
+            <meta name="twitter:image:src" content="https://i.imgur.com/8BYAMHC.png" />
           </Helmet>
           {content}
         </>

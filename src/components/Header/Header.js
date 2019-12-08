@@ -1,5 +1,5 @@
 import React from 'react'
-import { articles } from '../config/index'
+import { articles } from '../../config/index'
 
 const Header = props => (
   <header id="header" style={props.timeout ? { display: 'none' } : {}}>
@@ -10,9 +10,8 @@ const Header = props => (
       <div className="inner">
         <h1>Leonardo Quevedo</h1>
         <p>
-          {' '}
           Porto Alegre, RS. Software Engineer. (Coffee | Type | <b>JavaScript</b>. <br />
-          Especialista em <b>PWAs</b>. Evangelista de <b>Aplicativos Universais</b>.{' '}
+          Especialista em <b>PWAs</b>. Evangelista de <b>Aplicativos Universais</b>.
         </p>
       </div>
     </div>

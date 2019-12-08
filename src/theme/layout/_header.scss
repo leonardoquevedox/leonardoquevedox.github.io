@@ -23,7 +23,6 @@
     @include vendor('transition', 'opacity #{_duration(article)} ease-in-out');
     position: relative;
     margin-top: 3.5rem;
-
   }
 
   > :first-child {
@@ -110,6 +109,7 @@
           letter-spacing: _font(letter-spacing);
           font-size: 0.8rem;
           border-bottom: 0;
+          outline: none !important;
 
           &:hover {
             background-color: _palette(border-bg);

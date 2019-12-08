@@ -1,6 +1,6 @@
 import React from 'react'
 
-import pic01 from '../assets/img/pic01.jpg'
+import pic01 from '../../assets/img/pic01.jpg'
 
 class Ideas extends React.Component {
   render() {
@@ -8,8 +8,7 @@ class Ideas extends React.Component {
     return (
       <article
         id="ideas"
-        className={`${article === 'ideas' ? 'active' : ''} ${isVisible ? 'visible' : ''}`}
-        style={{ display: 'none' }}>
+        className={`${article === 'ideas' ? 'active' : ''} ${isVisible ? 'visible' : ''}`}>
         <h2 className="major">Código</h2>
         {close}
         <span className="image main">
