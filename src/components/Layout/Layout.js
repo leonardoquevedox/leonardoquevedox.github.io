@@ -48,7 +48,6 @@ const Layout = ({ children, location }) => {
             />
 
             {/* Crawlers */}
-            <meta name="robots" content="" />
             <meta name="revisit-after" content="1 day" />
             <meta name="language" content="Portuguese" />
             <meta httpEquiv="Content-Type" content="text/html; charset=utf-8" />

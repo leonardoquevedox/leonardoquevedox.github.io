@@ -1,6 +1,6 @@
 import React from 'react'
 
-import pic01 from '../../assets/img/pic01.jpg'
+import cover from '../../assets/img/contact.jpg'
 
 import { socialProfiles } from '../../config'
 
@@ -12,10 +12,10 @@ class Contact extends React.Component {
         id="contact"
         className={`${article === 'contact' ? 'active' : ''} ${isVisible ? 'visible' : ''}`}>
         {close}
-        <span className="image main">
-          <img src={pic01} alt="" />
-        </span>
         <h2 className="major">Contato</h2>
+        <span className="image main">
+          <img src={cover} alt="" />
+        </span>
         <p>
           Formulários de contato? Formais demais! <br />
           Só chamar em um dos canais abaixo ;)

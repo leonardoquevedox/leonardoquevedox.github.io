@@ -1,6 +1,8 @@
 import React from 'react'
 import { articles } from '../../config/index'
 
+import './Header.scss'
+
 const Header = props => (
   <header id="header" style={props.timeout ? { display: 'none' } : {}}>
     <div className="logo">
@@ -10,8 +12,13 @@ const Header = props => (
       <div className="inner">
         <h1>Leonardo Quevedo</h1>
         <p>
-          Porto Alegre, RS. Software Engineer. (Coffee | Type | <b>JavaScript</b>. <br />
-          Especialista em <b>PWAs</b>. Evangelista de <b>Aplicativos Universais</b>.
+          Porto Alegre, RS <br />| Software Engineer @
+          <a href="https://www.trin.ca" rel="noopener noreferrer" target="_blank">
+            <b>trinca137</b> |
+          </a>{' '}
+          JavaScript Fullstack | <br />
+          Especialista em <b>mobile</b> | Advocate de <b>Aplicativos Universais</b> | Devops | IA
+          Enthusiast.
         </p>
       </div>
     </div>

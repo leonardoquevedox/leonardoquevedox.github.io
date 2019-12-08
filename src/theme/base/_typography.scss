@@ -48,7 +48,9 @@ i {
 }
 
 p {
-  margin: 0 0 _size(element-margin) 0;
+  margin: 0 0 1rem 0;
+  font-size: 14px;
+  text-align: justify;
 }
 
 h1,

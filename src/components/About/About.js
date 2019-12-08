@@ -15,7 +15,7 @@ class About extends React.Component {
           <img src={cover} alt="" />
         </span>
         <p>
-          Porto alegrense de nascença, cidadão do mundo de coração. Inquieto por natureza. Uma vida
+          <b>Leonardo Quevedo.</b> Porto alegrense de nascença, cidadão do mundo de coração. Inquieto por natureza. Uma vida
           movida e norteada pela inovação. Pronto para encarar os desafios com soluções criativas.
           Sempre em busca do novo e do desconhecido. Focado em criar experiências incríveis de
           humanos para humanos.
