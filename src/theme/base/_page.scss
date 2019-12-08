@@ -38,37 +38,37 @@ body {
 }
 
 .rss-post {
-  max-width: 100%;
-  background-color: #efefef;
+  display: flex;
+  flex-direction: column;
+  background-color: white;
   color: black;
-  min-height: 300px;
-  text-align: center;
+  text-align: right;
+  border-radius: 5px;
+  width: auto;
 
   overflow: hidden;
 
   &__picture {
     width: 100%;
-    max-height: 150px;
+    max-height: 70%;
     object-fit: cover;
   }
   &__description {
-    padding: 16px;
+    padding: 1rem;
   }
   &__title {
     color: black;
     opacity: 0.9;
     font-size: 18px;
     font-weight: normal;
+    text-align: center;
   }
   &__cta {
-    background-color: #0be370;
-    padding: 8px;
-    border-radius: 4px;
-    text-align: center;
     margin: auto;
-    color: white;
-    font-weight: bold;
-	font-size: 16px;
-	letter-spacing: .5px;
+    margin-top: 2rem;
+    letter-spacing: 0.5px;
+    i:before {
+      font-size: 32px;
+    }
   }
 }

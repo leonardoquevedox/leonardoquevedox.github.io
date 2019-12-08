@@ -13,21 +13,19 @@ class About extends React.Component {
         style={{ display: 'none' }}>
         <h2 className="major">Publicações</h2>
         {close}
-        <p>
-          {posts &&
-            posts.items &&
-            posts.items.map(post => (
-              <div className="rss-post">
-                <img className="rss-post__picture" alt="" src={post.thumbnail} />
-                <div className="rss-post__description">
-                  <h6 className="rss-post__title">{post.title}</h6>
-                  <a href={post.link} className="rss-post__cta">
-                    <i className="icon fab fa-medium" /> Ler no Medium
-                  </a>
-                </div>
+        {posts &&
+          posts.items &&
+          posts.items.map(post => (
+            <div className="rss-post">
+              <img className="rss-post__picture" alt="" src={post.thumbnail} />
+              <div className="rss-post__description">
+                <h6 className="rss-post__title">{post.title}</h6>
+                <a href={post.link} target="_blank" rel="noopener noreferrer" className="rss-post__cta">
+                  <i className="icon fab fa-medium" />
+                </a>
               </div>
-            ))}
-        </p>
+            </div>
+          ))}
       </article>
     )
   }

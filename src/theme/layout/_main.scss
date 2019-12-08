@@ -7,24 +7,24 @@
 /* Main */
 
 #main {
-  @include vendor('flex-grow', '1');
-  @include vendor('flex-shrink', '1');
-  @include vendor('display', 'flex');
-  @include vendor('align-items', 'center');
-  @include vendor('justify-content', 'center');
-  @include vendor('flex-direction', 'column');
+  flex-grow: 1;
+  flex-shrink: 1;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  flex-direction: column;
   position: relative;
   max-width: 100%;
   z-index: 3;
   display: none;
 
   article {
-
     @include padding(2.5rem, 2.5rem, (2rem, 0, 1rem, 0));
     position: relative;
-    width: 40rem;
+    width: calc(100vw - 7.5rem);
     max-width: 100%;
-    background-color: transparentize(_palette(bg), 0.15);
+    height: calc(100vh - 5rem);
+    background-color: rgba(255, 255, 255, 0.1);
     border-radius: _size(border-radius);
     opacity: 0;
 
