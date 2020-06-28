@@ -1,112 +1,77 @@
-import React from 'react'
+import React, { useCallback, useState, useEffect } from 'react'
 
 import { Header, Main, Footer, Layout } from '../components'
 
-class IndexPage extends React.Component {
-  constructor(props) {
-    super(props)
-    this.state = {
-      isArticleVisible: false,
-      timeout: false,
-      isVisible: false,
-      article: '',
-      loading: 'is-loading'
-    }
-  }
+let openingTimeoutRef = null
 
-  componentDidMount() {
-    this.timeoutReference = setTimeout(() => {
-      this.setState({ loading: '' })
+const IndexPage = ({ location }) => {
+  const [isArticleVisible, setIsArticleVisible] = useState(false)
+  const [hasTimeout, setHasTimeout] = useState(false)
+  const [isVisible, setIsVisible] = useState(false)
+  const [article, setArticle] = useState('')
+  const [loading, setLoading] = useState('is-loading')
+  const [wrapperRef, setWrapperRef] = useState(null)
+
+  console.log(isArticleVisible, article)
+
+  const toggleArticle = useCallback(() => {
+    setIsArticleVisible(!isArticleVisible)
+    setHasTimeout(!hasTimeout)
+    setIsVisible(!isVisible)
+  }, [isVisible, hasTimeout, isArticleVisible])
+
+  const handleOpenArticle = useCallback(
+    (selectedArticle) => {
+      toggleArticle()
+      setArticle(selectedArticle)
+    },
+    [toggleArticle],
+  )
+
+  const handleCloseArticle = useCallback(() => {
+    toggleArticle()
+    setArticle('')
+  }, [toggleArticle])
+
+  const handleOutsideClick = useCallback(
+    (event) => {
+      if (wrapperRef && !wrapperRef.contains(event.target) && isArticleVisible) handleCloseArticle()
+    },
+    [isArticleVisible, wrapperRef, handleCloseArticle],
+  )
+
+  useEffect(() => {
+    openingTimeoutRef = setTimeout(() => {
+      setLoading('')
     }, 100)
-    document.addEventListener('mousedown', event => {
-      this.handleOutsideClick(event)
-    })
-  }
 
-  componentWillUnmount() {
-    if (this.timeoutReference) {
-      clearTimeout(this.timeoutReference)
+    document.addEventListener('mousedown', handleOutsideClick)
+
+    return () => {
+      if (openingTimeoutRef) clearTimeout(openingTimeoutRef)
+      document.removeEventListener('mousedown', handleOutsideClick)
     }
-    document.removeEventListener('mousedown', this.handleOutsideClick)
-  }
+  }, [handleOutsideClick])
 
-  setWrapperRef(ref) {
-    this.wrapperRef = ref
-  }
-
-  onOpenArticle(article) {
-    this.setState({
-      isArticleVisible: !this.state.isArticleVisible,
-      article
-    })
-
-    setTimeout(() => {
-      this.setState({
-        timeout: !this.state.timeout
-      })
-    }, 325)
-
-    setTimeout(() => {
-      this.setState({
-        isVisible: !this.state.isVisible
-      })
-    }, 350)
-  }
-
-  onCloseArticle() {
-    this.setState({
-      isVisible: !this.state.isVisible
-    })
-
-    setTimeout(() => {
-      this.setState({
-        timeout: !this.state.timeout
-      })
-    }, 325)
-
-    setTimeout(() => {
-      this.setState({
-        isArticleVisible: !this.state.isArticleVisible,
-        article: ''
-      })
-    }, 350)
-  }
-
-  handleOutsideClick(event) {
-    if (this.wrapperRef && !this.wrapperRef.contains(event.target)) {
-      if (this.state.isArticleVisible) {
-        this.onCloseArticle()
-      }
-    }
-  }
-
-  render() {
-    const { location } = this.props
-    const { loading, isArticleVisible, timeout, isVisible, article } = this.state
-
-    return (
-      <Layout location={location}>
-        <article className={`body ${loading} ${isArticleVisible ? 'is-article-visible' : ''}`}>
-          <section id="wrapper">
-            <Header
-              onOpenArticle={selectedArticle => this.onOpenArticle(selectedArticle)}
-              timeout={timeout}
-            />
-            <Main
-              isArticleVisible={isArticleVisible}
-              timeout={timeout}
-              isVisible={isVisible}
-              article={article}
-              onCloseArticle={() => this.onCloseArticle()}
-              setWrapperRef={ref => this.setWrapperRef(ref)}
-            />
-            <Footer timeout={timeout} />
-          </section>
-          <section id="bg" />
-        </article>
-      </Layout>
-    )
-  }
+  return (
+    <Layout location={location}>
+      <article className={`body ${loading} ${isArticleVisible ? 'is-article-visible' : ''}`}>
+        <section id="wrapper">
+          <Header onOpenArticle={handleOpenArticle} timeout={hasTimeout} />
+          <Main
+            article={article}
+            timeout={hasTimeout}
+            isVisible={isVisible}
+            isArticleVisible={isArticleVisible}
+            onCloseArticle={handleCloseArticle}
+            setWrapperRef={setWrapperRef}
+          />
+          <Footer timeout={hasTimeout} />
+        </section>
+        <section id="bg" />
+      </article>
+    </Layout>
+  )
 }
 
 export default IndexPage

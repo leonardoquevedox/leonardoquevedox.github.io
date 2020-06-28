@@ -5,30 +5,23 @@ import Ideas from '../Ideas/Ideas'
 import Content from '../Content/Content'
 import About from '../About/About'
 
-class Main extends React.Component {
-  render() {
-    const close = (
-      /* eslint-disable-next-line */
-      <a
-        className="close"
-        onClick={() => {
-          this.props.onCloseArticle()
-        }}
-      />
-    )
+const Close = ({ onCloseArticle }) => (
+  /* eslint-disable-next-line */
+  <a
+    className="close"
+    onClick={() => {
+      onCloseArticle()
+    }}
+  />
+)
 
-    return (
-      <div
-        ref={this.props.setWrapperRef}
-        id="main"
-        style={this.props.timeout ? { display: 'flex' } : { display: 'flex' }}>
-        <About {...this.props} close={close} />
-        <Content {...this.props} close={close} />
-        <Ideas {...this.props} close={close} />
-        <Contact {...this.props} close={close} />
-      </div>
-    )
-  }
-}
+const Main = ({ timeout, onCloseArticle, setWrapperRef, ...props }) => (
+  <div ref={setWrapperRef} id="main" style={timeout ? { display: 'flex' } : { display: 'flex' }}>
+    <About {...props} close={<Close onCloseArticle={onCloseArticle} />} />
+    <Content {...props} close={<Close onCloseArticle={onCloseArticle} />} />
+    <Ideas {...props} close={<Close onCloseArticle={onCloseArticle} />} />
+    <Contact {...props} close={<Close onCloseArticle={onCloseArticle} />} />
+  </div>
+)
 
 export default Main

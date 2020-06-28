@@ -29,7 +29,7 @@ const Layout = ({ children, location }) => {
           }
         }
       `}
-      render={data => (
+      render={(data) => (
         <>
           <Helmet title={data.site.siteMetadata.title}>
             <html lang="pt-BR" />
@@ -93,7 +93,7 @@ const Layout = ({ children, location }) => {
 }
 
 Layout.propTypes = {
-  children: PropTypes.node.isRequired
+  children: PropTypes.node.isRequired,
 }
 
 export default Layout

@@ -3,8 +3,8 @@ import { articles } from '../../config/index'
 
 import './Header.scss'
 
-const Header = props => (
-  <header id="header" style={props.timeout ? { display: 'none' } : {}}>
+const Header = ({ timeout, onOpenArticle }) => (
+  <header id="header" style={timeout ? { display: 'none' } : {}}>
     <div className="logo">
       <span className="icon fa fa-jedi fa-2x" />
     </div>
@@ -25,18 +25,19 @@ const Header = props => (
     <nav>
       <ul>
         {articles.map(
-          article =>
+          (article) =>
             article && (
               <li key={article.href}>
                 <a
                   href="#"
                   onClick={() => {
-                    props.onOpenArticle(article.href)
-                  }}>
+                    onOpenArticle(article.href)
+                  }}
+                >
                   {article.label}
                 </a>
               </li>
-            )
+            ),
         )}
       </ul>
     </nav>
