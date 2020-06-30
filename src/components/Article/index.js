@@ -6,8 +6,8 @@ const Article = ({ id, title, close, isVisible, openArticle, children }) => (
   <article
     id={id}
     className={'article '
-      .concat(openArticle === id ? 'active' : '')
-      .concat(isVisible ? 'visible' : '')
+      .concat(openArticle === id ? 'active ' : '')
+      .concat(isVisible ? 'visible ' : '')
       .trim()}
   >
     <h2 className="major">{title}</h2>

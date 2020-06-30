@@ -12,8 +12,6 @@ const IndexPage = ({ location }) => {
   const [loading, setLoading] = useState('is-loading')
   const [wrapperRef, setWrapperRef] = useState(null)
 
-  console.log(isArticleVisible, article)
-
   const toggleArticle = useCallback(() => {
     setIsArticleVisible(!isArticleVisible)
     setHasTimeout(!hasTimeout)
@@ -59,9 +57,9 @@ const IndexPage = ({ location }) => {
         <section id="wrapper">
           <Header onOpenArticle={handleOpenArticle} timeout={hasTimeout} />
           <Main
-            article={article}
             timeout={hasTimeout}
             isVisible={isVisible}
+            openArticle={article}
             isArticleVisible={isArticleVisible}
             onCloseArticle={handleCloseArticle}
             setWrapperRef={setWrapperRef}

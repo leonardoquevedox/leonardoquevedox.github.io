@@ -28,14 +28,13 @@ const Header = ({ timeout, onOpenArticle }) => (
           (article) =>
             article && (
               <li key={article.href}>
-                <a
-                  href="#"
+                <button
                   onClick={() => {
                     onOpenArticle(article.href)
                   }}
                 >
                   {article.label}
-                </a>
+                </button>
               </li>
             ),
         )}
