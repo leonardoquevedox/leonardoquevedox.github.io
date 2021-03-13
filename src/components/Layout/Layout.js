@@ -35,12 +35,12 @@ const Layout = ({ children, location }) => {
             <html lang="pt-BR" />
             {/* Geneal */}
             <title>
-              Leonardo Quevedo | Software, Inovação, JavaScript, Mobile, PWA, Open Source e
+              Leonardo Quevedo - Software, Inovação, JavaScript, Mobile, PWA, Open Source e
               Atualidade.
             </title>
             <meta
               name="description"
-              content="Por Leonardo Quevedo, Software Engineer. JavaScript Coder. Coffee Drinker. Artificial Intelligence Enthusiast. PWAs specialist. Universal applications advocate."
+              content="Leonardo Quevedo. Software Engineer. JavaScript Coder. Coffee Drinker. Artificial Intelligence Enthusiast. PWAs specialist. Universal applications advocate."
             />
             <meta
               name="keywords"
@@ -58,7 +58,7 @@ const Layout = ({ children, location }) => {
             <meta itemProp="name" content="leonardoquevedo:page:home | Leonardo Quevedo" />
             <meta
               itemProp="description"
-              content="Por Leonardo Quevedo, Software Engineer. JavaScript Coder. Coffee Drinker. Artificial Intelligence Enthusiast. PWAs specialist. Universal applications advocate."
+              content="Leonardo Quevedo. Software Engineer. JavaScript Coder. Coffee Drinker. Artificial Intelligence Enthusiast. PWAs specialist. Universal applications advocate."
             />
             <meta itemProp="image" content="https://i.imgur.com/8BYAMHC.png" />
 
@@ -70,19 +70,19 @@ const Layout = ({ children, location }) => {
             <meta property="og:title" content="leonardoquevedo:page:home | Leonardo Quevedo" />
             <meta
               property="og:description"
-              content="Por Leonardo Quevedo, Software Engineer. JavaScript Coder. Coffee Drinker. Artificial Intelligence Enthusiast. PWAs specialist. Universal applications advocate."
+              content="Leonardo Quevedo. Software Engineer. JavaScript Coder. Coffee Drinker. Artificial Intelligence Enthusiast. PWAs specialist. Universal applications advocate."
             />
             <meta property="og:locale" content="pt_BR" />
 
             {/* Twitter */}
             <meta name="twitter:card" content="summary" />
-            <meta name="twitter:site" content="@leonardoquevedo" />
+            <meta name="twitter:site" content="@leopq" />
             <meta name="twitter:title" content="leonardoquevedo:page:home | Leonardo Quevedo" />
             <meta
               name="twitter:description"
-              content="Por Leonardo Quevedo, Software Engineer. JavaScript Coder. Coffee Drinker. Artificial Intelligence Enthusiast. PWAs specialist. Universal applications advocate."
+              content="Leonardo Quevedo. Software Engineer. JavaScript Coder. Coffee Drinker. Artificial Intelligence Enthusiast. PWAs specialist. Universal applications advocate."
             />
-            <meta name="twitter:creator" content="@leonardoquevedo" />
+            <meta name="twitter:creator" content="@leopq" />
             <meta name="twitter:image:src" content="https://i.imgur.com/8BYAMHC.png" />
           </Helmet>
           {content}
