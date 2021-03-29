@@ -1,6 +1,6 @@
 {
-  "name": "github-gatsby-page",
-  "version": "1.1.1",
+  "name": "@leonardoquevedo/website",
+  "version": "1.0.0",
   "description": "Yet Another Github Page",
   "author": "Leonardo Quevedo",
   "homepage": "./",
@@ -36,6 +36,7 @@
     "eslint-plugin-import": "^2.22.1",
     "eslint-plugin-jsx-a11y": "^6.4.1",
     "eslint-plugin-react": "^7.22.0",
+    "esm": "^3.2.25",
     "gh-pages": "^3.1.0",
     "prettier": "^2.2.1",
     "shelljs": "^0.8.4"
