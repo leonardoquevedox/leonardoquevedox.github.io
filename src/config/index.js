@@ -1,46 +1,61 @@
 export const articles = [
   {
     href: 'about',
-    label: 'Sobre'
+    label: 'Sobre',
   },
   {
     href: 'ideas',
-    label: 'Projetos'
+    label: 'Projetos',
   },
   {
     href: 'content',
-    label: 'Conteúdo'
+    label: 'Conteúdo',
   },
   {
     href: 'contact',
-    label: 'Contato'
-  }
+    label: 'Contato',
+  },
 ]
 
 export const socialProfiles = [
   {
     label: 'Github',
     icon: 'github',
-    url: 'https://github.com/leopq'
-  },
-  {
-    label: 'Twitter',
-    icon: 'twitter',
-    url: 'https://twitter.com/leopq'
+    url: 'https://github.com/leonardoquevedox',
   },
   {
     label: 'Medium',
     icon: 'medium',
-    url: 'https://medium.com/@leonardoquevedo'
+    url: 'https://medium.com/@leonardoquevedox',
   },
   {
     label: 'LinkedIn',
     icon: 'linkedin',
-    url: 'https://www.linkedin.com/in/leonardoquevedo'
+    url: 'https://www.linkedin.com/in/leonardoquevedo',
+  },
+  {
+    label: 'YouTube',
+    icon: 'youtube',
+    url: 'https://www.youtube.com/c/LeonardoQuevedo',
+  },
+  {
+    label: 'Soundcloud',
+    icon: 'soundcloud',
+    url: 'https://soundcloud.com/leonardoquevedox',
+  },
+  {
+    label: 'Instagram',
+    icon: 'instagram',
+    url: 'https://instagram.com/leonardoquevedox',
   },
   {
     label: 'Facebook',
     icon: 'facebook',
-    url: 'https://facebook.com/leonardo.quevedo.23'
-  }
+    url: 'https://facebook.com/leonardoquevedox',
+  },
+  {
+    label: 'Twitter',
+    icon: 'twitter',
+    url: 'https://twitter.com/leopq',
+  },
 ]

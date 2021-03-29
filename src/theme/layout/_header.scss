@@ -116,6 +116,7 @@
           background-color: transparent;
           color: white;
           font-family: _font(family);
+          margin: auto;
 
           &:hover {
             background-color: _palette(border-bg);
@@ -219,6 +220,7 @@
   @include breakpoint(xsmall) {
     padding: 0 0.25rem;
     max-width: 80vw;
+    margin: auto;
 
     .content {
       .inner {
