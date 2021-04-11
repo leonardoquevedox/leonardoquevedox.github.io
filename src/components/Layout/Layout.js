@@ -5,6 +5,8 @@ import { StaticQuery, graphql } from 'gatsby'
 
 import '../../theme/main.scss'
 
+const description = `Leonardo Quevedo. Software Engineer. JavaScript Coder. Coffee Drinker. Artificial Intelligence Enthusiast. PWAs specialist. Universal applications advocate.`
+
 const Layout = ({ children, location }) => {
   let content
 
@@ -34,17 +36,11 @@ const Layout = ({ children, location }) => {
           <Helmet title={data.site.siteMetadata.title}>
             <html lang="pt-BR" />
             {/* Geneal */}
-            <title>
-              Leonardo Quevedo - Software, Inovação, JavaScript, Mobile, PWA, Open Source e
-              Atualidade.
-            </title>
-            <meta
-              name="description"
-              content="Leonardo Quevedo. Software Engineer. JavaScript Coder. Coffee Drinker. Artificial Intelligence Enthusiast. PWAs specialist. Universal applications advocate."
-            />
+            <title>Leonardo Quevedo</title>
+            <meta name="description" content={description} />
             <meta
               name="keywords"
-              content="Software, JavaScript, Mobile, PWA, Open Source, Discriminação Algorítmica, Sociedade, Hacktivismo."
+              content="Leonardo Quevedo, Software, JavaScript, Mobile, PWA, Open Source, Discriminação Algorítmica, Sociedade, Hacktivismo."
             />
 
             {/* Crawlers */}
@@ -56,10 +52,7 @@ const Layout = ({ children, location }) => {
             <link rel="author" href="Leonardo Quevedo" />
             <link rel="publisher" href="Leonardo Quevedo" />
             <meta itemProp="name" content="leonardoquevedo:page:home | Leonardo Quevedo" />
-            <meta
-              itemProp="description"
-              content="Leonardo Quevedo. Software Engineer. JavaScript Coder. Coffee Drinker. Artificial Intelligence Enthusiast. PWAs specialist. Universal applications advocate."
-            />
+            <meta itemProp="description" content={description} />
             <meta itemProp="image" content="https://i.imgur.com/8BYAMHC.png" />
 
             {/* Facebook */}
@@ -68,20 +61,14 @@ const Layout = ({ children, location }) => {
             <meta property="og:image" content="https://i.imgur.com/8BYAMHC.png" />
             <meta property="og:type" content="website" />
             <meta property="og:title" content="leonardoquevedo:page:home | Leonardo Quevedo" />
-            <meta
-              property="og:description"
-              content="Leonardo Quevedo. Software Engineer. JavaScript Coder. Coffee Drinker. Artificial Intelligence Enthusiast. PWAs specialist. Universal applications advocate."
-            />
+            <meta property="og:description" content={description} />
             <meta property="og:locale" content="pt_BR" />
 
             {/* Twitter */}
             <meta name="twitter:card" content="summary" />
             <meta name="twitter:site" content="@leopq" />
             <meta name="twitter:title" content="leonardoquevedo:page:home | Leonardo Quevedo" />
-            <meta
-              name="twitter:description"
-              content="Leonardo Quevedo. Software Engineer. JavaScript Coder. Coffee Drinker. Artificial Intelligence Enthusiast. PWAs specialist. Universal applications advocate."
-            />
+            <meta name="twitter:description" content={description} />
             <meta name="twitter:creator" content="@leopq" />
             <meta name="twitter:image:src" content="https://i.imgur.com/8BYAMHC.png" />
           </Helmet>
@@ -94,6 +81,7 @@ const Layout = ({ children, location }) => {
 
 Layout.propTypes = {
   children: PropTypes.node.isRequired,
+  location: PropTypes.instanceOf(Object).isRequired,
 }
 
 export default Layout
