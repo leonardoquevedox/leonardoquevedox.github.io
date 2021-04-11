@@ -8,7 +8,7 @@ const rootPath = path.resolve(__dirname, '../../')
 const { exec } = shell
 
 const run = async () => {
-  console.log(`☮   Github page: Generating commit...`.yellow)
+  console.log(`☮ Github page: Generating commit...`.yellow)
   const commitMsg = 'Updates Github page version.'
   await exec(`cp ./CNAME ./public/CNAME`, { cwd: rootPath })
   await exec(`cp ./.gitignore ./public/.gitignore`, { cwd: rootPath })
