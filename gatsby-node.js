@@ -25,7 +25,6 @@ exports.onCreateWebpackConfig = ({ actions }) => {
       },
     },
     stats: {
-      // warn => /Conflicting order between:/gm.test(warn)
       warningsFilter: [() => true], // if true will ignore
     },
   })
