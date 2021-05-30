@@ -6,7 +6,7 @@ import { StaticQuery, graphql } from 'gatsby'
 import '../../theme/main.scss'
 
 const Layout = ({ children, location }) => {
-  const description = `Leonardo Quevedo. Taurino. Músico. Software Engineer @trinca137. Louco nas horas vagas.`
+  const description = `Leonardo Quevedo. Taurino. Músico. Sonhador. Escritor. Software Engineer @trinca137. Leio porque me ajuda a entender, escrevo pelo mesmo motivo.`
 
   let content
 

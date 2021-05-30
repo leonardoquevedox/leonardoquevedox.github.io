@@ -1,0 +1,2 @@
+(self.webpackChunk_leonardoquevedo_web=self.webpackChunk_leonardoquevedo_web||[]).push([[883],{9616:function(e,t,n){"use strict";n.r(t);var u=n(7294),l=n(8850);t.default=function(){return u.createElement(l.Ar,null,u.createElement("h1",null,"NOT FOUND"),u.createElement("p",null,"You just hit a route that doesn't exist... the sadness."))}}}]);
+//# sourceMappingURL=component---src-pages-404-js-486ae43de6a8af49a26d.js.map
