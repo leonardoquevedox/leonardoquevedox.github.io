@@ -1,8 +1,6 @@
 import React from 'react'
 import { articles } from '../../config/index'
 
-import './Header.scss'
-
 const Header = ({ timeout, onOpenArticle }) => (
   <header id="header" style={timeout ? { display: 'none' } : {}}>
     <div className="logo">

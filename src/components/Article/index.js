@@ -1,14 +1,15 @@
 import React from 'react'
 
 import PropTypes from 'prop-types'
+import clsx from 'clsx'
 
 const Article = ({ id, title, close, isVisible, openArticle, children }) => (
   <article
     id={id}
-    className={'article '
-      .concat(openArticle === id ? 'active ' : '')
-      .concat(isVisible ? 'visible ' : '')
-      .trim()}
+    className={clsx('article', {
+      visible: isVisible,
+      active: openArticle === id,
+    })}
   >
     <h2 className="major">{title}</h2>
     {close}

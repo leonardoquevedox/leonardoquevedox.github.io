@@ -8,7 +8,7 @@ const fs = require('fs-extra')
 
 const { exec } = shell
 const rootPath = path.resolve(__dirname, '../../../../')
-const postsJsonPath = path.join(rootPath, 'src', 'config', 'posts.js')
+const postsJsonPath = path.join(rootPath, 'src', 'data', 'posts.js')
 
 const getPostsFileContent = (posts) => {
   const stringified = JSON.stringify(posts, null, 4)
