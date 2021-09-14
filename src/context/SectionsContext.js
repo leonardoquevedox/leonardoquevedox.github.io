@@ -10,8 +10,8 @@ export const SectionsContextProvider = ({ children }) => {
   const [isSectionVisible, setIsSectionVisible] = useState(false)
   const [hasTimeout, setHasTimeout] = useState(false)
   const [isVisible, setIsVisible] = useState(false)
-  const [article, setSection] = useState('')
-  const [loading, setLoading] = useState('is-loading')
+  const [currentSection, setCurrentSection] = useState('')
+  const [isLoading, setIsLoading] = useState(true)
   const [wrapperRef, setWrapperRef] = useState(null)
 
   const toggleSection = useCallback(() => {
@@ -23,14 +23,14 @@ export const SectionsContextProvider = ({ children }) => {
   const handleOpenSection = useCallback(
     (selectedSection) => {
       toggleSection()
-      setSection(selectedSection)
+      setCurrentSection(selectedSection)
     },
     [toggleSection],
   )
 
   const handleCloseSection = useCallback(() => {
     toggleSection()
-    setSection('')
+    setCurrentSection('')
   }, [toggleSection])
 
   const handleOutsideClick = useCallback(
@@ -42,7 +42,7 @@ export const SectionsContextProvider = ({ children }) => {
 
   useEffect(() => {
     openingTimeoutRef = setTimeout(() => {
-      setLoading('')
+      setIsLoading(false)
     }, 100)
 
     document.addEventListener('mousedown', handleOutsideClick)
@@ -54,17 +54,11 @@ export const SectionsContextProvider = ({ children }) => {
   }, [handleOutsideClick])
 
   const values = {
-    isSectionVisible,
-    setIsSectionVisible,
     hasTimeout,
-    setHasTimeout,
     isVisible,
-    setIsVisible,
-    article,
-    setSection,
-    loading,
-    setLoading,
-    wrapperRef,
+    currentSection,
+    isLoading,
+    isSectionVisible,
     setWrapperRef,
     handleCloseSection,
     handleOpenSection,

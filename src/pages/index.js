@@ -8,13 +8,14 @@ import Main from 'components/Main/Main'
 import Footer from 'components/Footer'
 
 import { useSectionsContext } from 'context/SectionsContext'
+import clsx from 'clsx'
 
 const HomePage = ({ location }) => {
   const {
     hasTimeout,
     isVisible,
-    section,
-    loading,
+    isLoading,
+    currentSection,
     isSectionVisible,
     setWrapperRef,
     handleCloseSection,
@@ -23,13 +24,18 @@ const HomePage = ({ location }) => {
 
   return (
     <Layout location={location}>
-      <article className={`body ${loading} ${isSectionVisible ? 'is-article-visible' : ''}`}>
+      <article
+        className={clsx('body', {
+          'is-loading': isLoading,
+          'is-article-visible': isSectionVisible,
+        })}
+      >
         <section id="wrapper">
           <Header onOpenSection={handleOpenSection} timeout={hasTimeout} />
           <Main
             timeout={hasTimeout}
             isVisible={isVisible}
-            openSection={section}
+            openSection={currentSection}
             isSectionVisible={isSectionVisible}
             onCloseSection={handleCloseSection}
             setWrapperRef={setWrapperRef}
