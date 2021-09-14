@@ -1,7 +1,7 @@
 {
   "name": "@leonardoquevedo/web",
   "version": "1.0.0",
-  "description": "🌍 Github website powered by Gatsby!",
+  "description": "🌍 React personal website powered by Gatsby!",
   "author": "Leonardo Quevedo",
   "homepage": "./",
   "license": "MIT",
