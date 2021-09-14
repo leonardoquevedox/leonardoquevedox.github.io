@@ -8,7 +8,7 @@
   "scripts": {
     "start": "gatsby develop --port 3000",
     "build": "npm run fetch:rss && gatsby build",
-    "deploy": "gatsby build && node scripts/deploy",
+    "deploy": "sh deploy.sh",
     "fetch:rss": "node scripts/medium/posts/fetch"
   },
   "dependencies": {
