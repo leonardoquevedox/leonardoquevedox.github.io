@@ -1,13 +1,13 @@
 import React from 'react'
 
-import Article from 'components/Article'
+import Section from 'components/Section'
 
 import posts from 'data/posts'
 
 import './Content.scss'
 
 const About = ({ ...props }) => (
-  <Article id="content" title="Publicações" {...props}>
+  <Section id="content" title="Publicações" {...props}>
     {posts &&
       posts.items &&
       posts.items.map((post) => (
@@ -25,7 +25,7 @@ const About = ({ ...props }) => (
           </div>
         </a>
       ))}
-  </Article>
+  </Section>
 )
 
 export default About

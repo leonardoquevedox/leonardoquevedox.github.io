@@ -10,37 +10,37 @@ import Footer from 'components/Footer'
 let openingTimeoutRef = null
 
 const HomePage = ({ location }) => {
-  const [isArticleVisible, setIsArticleVisible] = useState(false)
+  const [isSectionVisible, setIsSectionVisible] = useState(false)
   const [hasTimeout, setHasTimeout] = useState(false)
   const [isVisible, setIsVisible] = useState(false)
-  const [article, setArticle] = useState('')
+  const [article, setSection] = useState('')
   const [loading, setLoading] = useState('is-loading')
   const [wrapperRef, setWrapperRef] = useState(null)
 
-  const toggleArticle = useCallback(() => {
-    setIsArticleVisible(!isArticleVisible)
+  const toggleSection = useCallback(() => {
+    setIsSectionVisible(!isSectionVisible)
     setHasTimeout(!hasTimeout)
     setIsVisible(!isVisible)
-  }, [isVisible, hasTimeout, isArticleVisible])
+  }, [isVisible, hasTimeout, isSectionVisible])
 
-  const handleOpenArticle = useCallback(
-    (selectedArticle) => {
-      toggleArticle()
-      setArticle(selectedArticle)
+  const handleOpenSection = useCallback(
+    (selectedSection) => {
+      toggleSection()
+      setSection(selectedSection)
     },
-    [toggleArticle],
+    [toggleSection],
   )
 
-  const handleCloseArticle = useCallback(() => {
-    toggleArticle()
-    setArticle('')
-  }, [toggleArticle])
+  const handleCloseSection = useCallback(() => {
+    toggleSection()
+    setSection('')
+  }, [toggleSection])
 
   const handleOutsideClick = useCallback(
     (event) => {
-      if (wrapperRef && !wrapperRef.contains(event.target) && isArticleVisible) handleCloseArticle()
+      if (wrapperRef && !wrapperRef.contains(event.target) && isSectionVisible) handleCloseSection()
     },
-    [isArticleVisible, wrapperRef, handleCloseArticle],
+    [isSectionVisible, wrapperRef, handleCloseSection],
   )
 
   useEffect(() => {
@@ -58,15 +58,15 @@ const HomePage = ({ location }) => {
 
   return (
     <Layout location={location}>
-      <article className={`body ${loading} ${isArticleVisible ? 'is-article-visible' : ''}`}>
+      <article className={`body ${loading} ${isSectionVisible ? 'is-article-visible' : ''}`}>
         <section id="wrapper">
-          <Header onOpenArticle={handleOpenArticle} timeout={hasTimeout} />
+          <Header onOpenSection={handleOpenSection} timeout={hasTimeout} />
           <Main
             timeout={hasTimeout}
             isVisible={isVisible}
-            openArticle={article}
-            isArticleVisible={isArticleVisible}
-            onCloseArticle={handleCloseArticle}
+            openSection={article}
+            isSectionVisible={isSectionVisible}
+            onCloseSection={handleCloseSection}
             setWrapperRef={setWrapperRef}
           />
           <Footer timeout={hasTimeout} />

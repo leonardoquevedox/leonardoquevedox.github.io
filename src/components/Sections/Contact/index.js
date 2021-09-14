@@ -2,12 +2,12 @@ import React from 'react'
 
 import cover from 'assets/img/contact.jpg'
 
-import { socialProfiles } from '../../../config'
+import profiles from 'data/profiles'
 
-import Article from '../../Article'
+import Section from '../../Section'
 
 const Contact = ({ ...props }) => (
-  <Article id="contact" {...props}>
+  <Section id="contact" {...props}>
     <span className="image main">
       <img src={cover} alt="" />
     </span>
@@ -16,7 +16,7 @@ const Contact = ({ ...props }) => (
       Só chamar em um dos canais abaixo ;)
     </p>
     <ul className="icons">
-      {socialProfiles.map(
+      {profiles.map(
         (profile) =>
           profile && (
             <li key={profile.icon}>
@@ -32,7 +32,7 @@ const Contact = ({ ...props }) => (
           ),
       )}
     </ul>
-  </Article>
+  </Section>
 )
 
 export default Contact

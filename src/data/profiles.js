@@ -1,23 +1,4 @@
-export const articles = [
-  {
-    href: 'about',
-    label: 'Sobre',
-  },
-  {
-    href: 'ideas',
-    label: 'Projetos',
-  },
-  {
-    href: 'content',
-    label: 'Conteúdo',
-  },
-  {
-    href: 'contact',
-    label: 'Contato',
-  },
-]
-
-export const socialProfiles = [
+export default [
   {
     label: 'Github',
     icon: 'github',

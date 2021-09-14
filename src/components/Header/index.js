@@ -1,7 +1,8 @@
 import React from 'react'
-import { articles } from '../../config/index'
 
-const Header = ({ timeout, onOpenArticle }) => (
+import sections from 'config/sections'
+
+const Header = ({ timeout, onOpenSection }) => (
   <header id="header" style={timeout ? { display: 'none' } : {}}>
     <div className="logo">
       <span className="icon fa fa-jedi fa-2x" />
@@ -22,16 +23,16 @@ const Header = ({ timeout, onOpenArticle }) => (
     </div>
     <nav>
       <ul>
-        {articles.map(
-          (article) =>
-            article && (
-              <li key={article.href}>
+        {sections.map(
+          (section) =>
+            section && (
+              <li key={section.href}>
                 <button
                   onClick={() => {
-                    onOpenArticle(article.href)
+                    onOpenSection(section.href)
                   }}
                 >
-                  {article.label}
+                  {section.label}
                 </button>
               </li>
             ),

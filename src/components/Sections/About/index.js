@@ -2,10 +2,10 @@ import React from 'react'
 
 import cover from 'assets/img/author.jpg'
 
-import Article from '../../Article'
+import Section from '../../Section'
 
 const About = ({ ...props }) => (
-  <Article id="about" title="Sobre" {...props}>
+  <Section id="about" title="Sobre" {...props}>
     <span className="image main">
       <img src={cover} alt="" />
     </span>
@@ -15,7 +15,7 @@ const About = ({ ...props }) => (
       soluções criativas. Sempre em busca do novo e do desconhecido. Focado em criar experiências
       incríveis de humanos para humanos.
     </p>
-  </Article>
+  </Section>
 )
 
 export default About
