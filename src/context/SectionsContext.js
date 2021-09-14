@@ -7,20 +7,18 @@ let openingTimeoutRef = null
 export const SectionsContext = createContext({})
 
 export const SectionsContextProvider = ({ children }) => {
-  const [isSectionVisible, setIsSectionVisible] = useState(false)
   const [hasTimeout, setHasTimeout] = useState(false)
-  const [isVisible, setIsVisible] = useState(false)
+  const [hasOpenSection, setHasOpenSection] = useState(false)
   const [currentSection, setCurrentSection] = useState('')
   const [isLoading, setIsLoading] = useState(true)
   const [wrapperRef, setWrapperRef] = useState(null)
 
   const toggleSection = useCallback(() => {
-    setIsSectionVisible(!isSectionVisible)
     setHasTimeout(!hasTimeout)
-    setIsVisible(!isVisible)
-  }, [isVisible, hasTimeout, isSectionVisible])
+    setHasOpenSection(!hasOpenSection)
+  }, [hasOpenSection, hasTimeout])
 
-  const handleOpenSection = useCallback(
+  const handleSectionOpening = useCallback(
     (selectedSection) => {
       toggleSection()
       setCurrentSection(selectedSection)
@@ -28,16 +26,16 @@ export const SectionsContextProvider = ({ children }) => {
     [toggleSection],
   )
 
-  const handleCloseSection = useCallback(() => {
+  const handleSectionClosure = useCallback(() => {
     toggleSection()
     setCurrentSection('')
   }, [toggleSection])
 
   const handleOutsideClick = useCallback(
     (event) => {
-      if (wrapperRef && !wrapperRef.contains(event.target) && isSectionVisible) handleCloseSection()
+      if (wrapperRef && !wrapperRef.contains(event.target)) handleSectionClosure()
     },
-    [isSectionVisible, wrapperRef, handleCloseSection],
+    [wrapperRef, handleSectionClosure],
   )
 
   useEffect(() => {
@@ -55,13 +53,12 @@ export const SectionsContextProvider = ({ children }) => {
 
   const values = {
     hasTimeout,
-    isVisible,
+    hasOpenSection,
     currentSection,
     isLoading,
-    isSectionVisible,
     setWrapperRef,
-    handleCloseSection,
-    handleOpenSection,
+    handleSectionClosure,
+    handleSectionOpening,
   }
 
   return <SectionsContext.Provider value={values}>{children}</SectionsContext.Provider>
@@ -73,8 +70,6 @@ SectionsContextProvider.propTypes = {
 
 export const useSectionsContext = () => {
   const context = useContext(SectionsContext)
-
-  if (!context) throw new Error('useCmsProvider must be used within an CmsProvider.')
-
+  if (!context) throw new Error('useSectionsContext must be used within an Provider.')
   return context
 }

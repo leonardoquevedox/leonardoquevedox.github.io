@@ -4,10 +4,10 @@ import Section from 'components/Section'
 
 import posts from 'data/posts'
 
-import './Content.scss'
+import './ContentSection.scss'
 
-const About = ({ ...props }) => (
-  <Section id="content" title="Publicações" {...props}>
+const ContentSection = () => (
+  <Section id="content" title="Publicações">
     {posts &&
       posts.items &&
       posts.items.map((post) => (
@@ -28,4 +28,4 @@ const About = ({ ...props }) => (
   </Section>
 )
 
-export default About
+export default ContentSection

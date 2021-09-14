@@ -6,8 +6,8 @@ import profiles from 'data/profiles'
 
 import Section from '../../Section'
 
-const Contact = ({ ...props }) => (
-  <Section id="contact" {...props}>
+const ContactSection = () => (
+  <Section id="contact">
     <span className="image main">
       <img src={cover} alt="" />
     </span>
@@ -35,4 +35,4 @@ const Contact = ({ ...props }) => (
   </Section>
 )
 
-export default Contact
+export default ContactSection

@@ -1,59 +1,57 @@
 import React from 'react'
-
-import PropTypes from 'prop-types'
+import clsx from 'clsx'
 
 import Layout from 'components/Layout'
 import Header from 'components/Header'
-import Main from 'components/Main/Main'
 import Footer from 'components/Footer'
 
-import { useSectionsContext } from 'context/SectionsContext'
-import clsx from 'clsx'
+import ContactSection from 'components/Sections/ContactSection'
+import IdeasSection from 'components/Sections/IdeasSection'
+import ContentSection from 'components/Sections/ContentSection'
+import AboutSection from 'components/Sections/AboutSection'
 
-const HomePage = ({ location }) => {
-  const {
-    hasTimeout,
-    isVisible,
-    isLoading,
-    currentSection,
-    isSectionVisible,
-    setWrapperRef,
-    handleCloseSection,
-    handleOpenSection,
-  } = useSectionsContext()
+import { useSectionsContext } from 'context/SectionsContext'
+
+const SectionCloseButton = () => {
+  const { handleSectionClosure } = useSectionsContext()
 
   return (
-    <Layout location={location}>
+    // eslint-disable-next-line
+    <a
+      className="close"
+      onClick={() => {
+        handleSectionClosure()
+      }}
+    />
+  )
+}
+
+const HomePage = () => {
+  const { hasOpenSection, isLoading, setWrapperRef } = useSectionsContext()
+
+  return (
+    <Layout>
       <article
         className={clsx('body', {
           'is-loading': isLoading,
-          'is-article-visible': isSectionVisible,
+          'is-article-visible': hasOpenSection,
         })}
       >
         <section id="wrapper">
-          <Header onOpenSection={handleOpenSection} timeout={hasTimeout} />
-          <Main
-            timeout={hasTimeout}
-            isVisible={isVisible}
-            openSection={currentSection}
-            isSectionVisible={isSectionVisible}
-            onCloseSection={handleCloseSection}
-            setWrapperRef={setWrapperRef}
-          />
-          <Footer timeout={hasTimeout} />
+          <Header />
+          <SectionCloseButton />
+          <div id="main" ref={setWrapperRef}>
+            <AboutSection />
+            <ContentSection />
+            <IdeasSection />
+            <ContactSection />
+          </div>
+          <Footer isLoading={isLoading} />
         </section>
         <section id="bg" />
       </article>
     </Layout>
   )
-}
-
-HomePage.propTypes = {
-  location: PropTypes.string,
-}
-
-HomePage.defaultProps = {
-  location: '',
 }
 
 export default HomePage

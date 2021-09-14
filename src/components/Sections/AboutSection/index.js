@@ -4,8 +4,8 @@ import cover from 'assets/img/author.jpg'
 
 import Section from '../../Section'
 
-const About = ({ ...props }) => (
-  <Section id="about" title="Sobre" {...props}>
+const About = () => (
+  <Section id="about" title="Sobre">
     <span className="image main">
       <img src={cover} alt="" />
     </span>
