@@ -1,6 +1,3 @@
-// eslint-disable-next-line
-require = require('esm')(module)
-
 const path = require('path')
 
 exports.onCreateWebpackConfig = ({ actions }) => {
