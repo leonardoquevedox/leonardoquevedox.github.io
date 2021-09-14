@@ -1,7 +1,7 @@
 import React from 'react'
-import posts from '../../config/posts'
+import posts from '../../../config/posts'
 
-import Article from '../Article'
+import Article from '../../Article'
 
 import './Content.scss'
 

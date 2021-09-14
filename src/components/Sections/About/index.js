@@ -1,8 +1,8 @@
 import React from 'react'
 
-import cover from '../../assets/img/author.jpg'
+import cover from 'assets/img/author.jpg'
 
-import Article from '../Article'
+import Article from '../../Article'
 
 const About = ({ ...props }) => (
   <Article id="about" title="Sobre" {...props}>

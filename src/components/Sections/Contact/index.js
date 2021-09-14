@@ -1,10 +1,10 @@
 import React from 'react'
 
-import cover from '../../assets/img/contact.jpg'
+import cover from 'assets/img/contact.jpg'
 
-import { socialProfiles } from '../../config'
+import { socialProfiles } from '../../../config'
 
-import Article from '../Article'
+import Article from '../../Article'
 
 const Contact = ({ ...props }) => (
   <Article id="contact" {...props}>

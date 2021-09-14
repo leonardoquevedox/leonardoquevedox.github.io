@@ -2,7 +2,10 @@ import React, { useCallback, useState, useEffect } from 'react'
 
 import PropTypes from 'prop-types'
 
-import { Header, Main, Footer, Layout } from 'components/index'
+import Layout from 'components/Layout'
+import Header from 'components/Header'
+import Main from 'components/Main/Main'
+import Footer from 'components/Footer'
 
 let openingTimeoutRef = null
 

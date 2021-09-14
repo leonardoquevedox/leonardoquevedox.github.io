@@ -1,8 +1,8 @@
 import React from 'react'
 
-import pic01 from '../../assets/img/code.jpg'
+import pic01 from 'assets/img/code.jpg'
 
-import Article from '../Article'
+import Article from '../../Article'
 
 const Ideas = ({ ...props }) => (
   <Article id="ideas" title="Projetos" {...props}>

@@ -1,9 +1,9 @@
 import React from 'react'
 
-import Contact from '../Contact/Contact'
-import Ideas from '../Ideas/Ideas'
-import Content from '../Content/Content'
-import About from '../About/About'
+import Contact from '../Sections/Contact'
+import Ideas from '../Sections/Ideas'
+import Content from '../Sections/Content'
+import About from '../Sections/About'
 
 const Close = ({ onCloseArticle }) => (
   /* eslint-disable-next-line */
