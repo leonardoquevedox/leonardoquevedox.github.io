@@ -1,4 +1,4 @@
-import React, { useCallback, useState, useEffect } from 'react'
+import React from 'react'
 
 import PropTypes from 'prop-types'
 
@@ -7,54 +7,19 @@ import Header from 'components/Header'
 import Main from 'components/Main/Main'
 import Footer from 'components/Footer'
 
-let openingTimeoutRef = null
+import { useSectionsContext } from 'context/SectionsContext'
 
 const HomePage = ({ location }) => {
-  const [isSectionVisible, setIsSectionVisible] = useState(false)
-  const [hasTimeout, setHasTimeout] = useState(false)
-  const [isVisible, setIsVisible] = useState(false)
-  const [article, setSection] = useState('')
-  const [loading, setLoading] = useState('is-loading')
-  const [wrapperRef, setWrapperRef] = useState(null)
-
-  const toggleSection = useCallback(() => {
-    setIsSectionVisible(!isSectionVisible)
-    setHasTimeout(!hasTimeout)
-    setIsVisible(!isVisible)
-  }, [isVisible, hasTimeout, isSectionVisible])
-
-  const handleOpenSection = useCallback(
-    (selectedSection) => {
-      toggleSection()
-      setSection(selectedSection)
-    },
-    [toggleSection],
-  )
-
-  const handleCloseSection = useCallback(() => {
-    toggleSection()
-    setSection('')
-  }, [toggleSection])
-
-  const handleOutsideClick = useCallback(
-    (event) => {
-      if (wrapperRef && !wrapperRef.contains(event.target) && isSectionVisible) handleCloseSection()
-    },
-    [isSectionVisible, wrapperRef, handleCloseSection],
-  )
-
-  useEffect(() => {
-    openingTimeoutRef = setTimeout(() => {
-      setLoading('')
-    }, 100)
-
-    document.addEventListener('mousedown', handleOutsideClick)
-
-    return () => {
-      if (openingTimeoutRef) clearTimeout(openingTimeoutRef)
-      document.removeEventListener('mousedown', handleOutsideClick)
-    }
-  }, [handleOutsideClick])
+  const {
+    hasTimeout,
+    isVisible,
+    section,
+    loading,
+    isSectionVisible,
+    setWrapperRef,
+    handleCloseSection,
+    handleOpenSection,
+  } = useSectionsContext()
 
   return (
     <Layout location={location}>
@@ -64,7 +29,7 @@ const HomePage = ({ location }) => {
           <Main
             timeout={hasTimeout}
             isVisible={isVisible}
-            openSection={article}
+            openSection={section}
             isSectionVisible={isSectionVisible}
             onCloseSection={handleCloseSection}
             setWrapperRef={setWrapperRef}

@@ -12,6 +12,7 @@
     "fetch:rss": "node scripts/medium/posts/fetch"
   },
   "dependencies": {
+    "babel-plugin-styled-components": "^1.13.2",
     "clsx": "^1.1.1",
     "gatsby": "^3.13.0",
     "gatsby-plugin-advanced-sitemap": "^2.0.0",
@@ -21,11 +22,13 @@
     "gatsby-plugin-robots-txt": "^1.6.10",
     "gatsby-plugin-sass": "^4.13.0",
     "gatsby-plugin-sitemap": "^4.9.0",
+    "gatsby-plugin-styled-components": "^4.13.0",
     "node-sass": "^5.0.0",
     "prop-types": "^15.7.2",
     "react": "^17.0.2",
     "react-dom": "^17.0.2",
-    "react-helmet": "^6.1.0"
+    "react-helmet": "^6.1.0",
+    "styled-components": "^5.3.1"
   },
   "devDependencies": {
     "axios": "^0.21.4",

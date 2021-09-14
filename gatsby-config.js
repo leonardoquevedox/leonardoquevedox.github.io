@@ -9,6 +9,7 @@ module.exports = {
     'gatsby-plugin-sass',
     'gatsby-plugin-react-helmet',
     'gatsby-plugin-advanced-sitemap',
+    'gatsby-plugin-styled-components',
     {
       resolve: 'gatsby-plugin-robots-txt',
       options: {},
