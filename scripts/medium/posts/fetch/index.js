@@ -18,7 +18,7 @@ const getPostsFileContent = (posts) => {
 const run = async () => {
   try {
     console.log(`☮   Github page: Fetching Medium posts...`.yellow)
-    const mediumRssFeed = 'https://medium.com/feed/@leonardoquevedo'
+    const mediumRssFeed = 'https://medium.com/feed/@leonardoquevedox'
     const rssToJsonApi = 'https://api.rss2json.com/v1/api.json'
     const response = await axios.get(rssToJsonApi, { params: { rss_url: mediumRssFeed } })
     if (response) {
