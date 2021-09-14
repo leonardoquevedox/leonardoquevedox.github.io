@@ -1,0 +1,10 @@
+main {
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  width: 100%;
+  max-width: 600px;
+  margin: auto;
+  height: 100%;
+  z-index: 3;
+}

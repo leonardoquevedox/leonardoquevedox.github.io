@@ -4,18 +4,25 @@ import PropTypes from 'prop-types'
 import clsx from 'clsx'
 import { useSectionsContext } from 'context/SectionsContext'
 
-const Section = ({ id, title, close, children }) => {
-  const { hasOpenSection, currentSection } = useSectionsContext()
+const Section = ({ id, title, children }) => {
+  const { hasOpenSection, currentSection, handleSectionClosure } = useSectionsContext()
 
   return (
     <article
-      className={clsx('article', {
+      className={clsx('app-section', {
         visible: hasOpenSection,
         active: currentSection === id,
       })}
     >
       <h2 className="major">{title}</h2>
-      {close}
+      <button
+        className="close"
+        onClick={() => {
+          handleSectionClosure()
+        }}
+      >
+        Fechar
+      </button>
       {children}
     </article>
   )
@@ -24,14 +31,12 @@ const Section = ({ id, title, close, children }) => {
 Section.propTypes = {
   id: PropTypes.string,
   title: PropTypes.node,
-  close: PropTypes.node,
   children: PropTypes.node,
 }
 
 Section.defaultProps = {
   id: null,
   title: '',
-  close: null,
   children: null,
 }
 

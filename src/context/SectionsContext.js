@@ -7,24 +7,18 @@ let openingTimeoutRef = null
 export const SectionsContext = createContext({})
 
 export const SectionsContextProvider = ({ children }) => {
-  const [hasTimeout, setHasTimeout] = useState(false)
-  const [hasOpenSection, setHasOpenSection] = useState(false)
+  const [isOpening, setIsOpening] = useState(false)
   const [currentSection, setCurrentSection] = useState('')
   const [isLoading, setIsLoading] = useState(true)
   const [wrapperRef, setWrapperRef] = useState(null)
 
   const toggleSection = useCallback(() => {
-    setHasTimeout(!hasTimeout)
-    setHasOpenSection(!hasOpenSection)
-  }, [hasOpenSection, hasTimeout])
+    setIsOpening(!isOpening)
+  }, [isOpening])
 
-  const handleSectionOpening = useCallback(
-    (selectedSection) => {
-      toggleSection()
-      setCurrentSection(selectedSection)
-    },
-    [toggleSection],
-  )
+  const handleSectionOpening = useCallback((selectedSection) => {
+    setCurrentSection(selectedSection)
+  }, [])
 
   const handleSectionClosure = useCallback(() => {
     toggleSection()
@@ -52,8 +46,7 @@ export const SectionsContextProvider = ({ children }) => {
   }, [handleOutsideClick])
 
   const values = {
-    hasTimeout,
-    hasOpenSection,
+    isOpening,
     currentSection,
     isLoading,
     setWrapperRef,

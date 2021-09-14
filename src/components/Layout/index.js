@@ -1,8 +1,13 @@
 import React from 'react'
 import PropTypes from 'prop-types'
+import clsx from 'clsx'
+
+import Header from 'components/Header'
+import Footer from 'components/Footer'
+
+import { SectionsContextProvider } from 'context/SectionsContext'
 
 import '../../styles/main.scss'
-import SEO from 'components/SEO'
 
 const Layout = ({ children, location }) => {
   let content
@@ -18,9 +23,22 @@ const Layout = ({ children, location }) => {
   }
 
   return (
-    <>
-      <SEO /> {content}
-    </>
+    <SectionsContextProvider>
+      {({ isLoading, hasSelectedSection }) => (
+        <div id="wrapper">
+          <article
+            className={clsx('body', {
+              'is-loading': isLoading,
+              'is-article-visible': hasSelectedSection,
+            })}
+          >
+            <Header />
+            {content}
+            <Footer />
+          </article>
+        </div>
+      )}
+    </SectionsContextProvider>
   )
 }
 
