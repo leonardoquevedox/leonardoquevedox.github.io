@@ -17,7 +17,6 @@ exports.onCreateWebpackConfig = ({ actions }) => {
         services: path.resolve(__dirname, 'src/services'),
         styles: path.resolve(__dirname, 'src/styles'),
         utils: path.resolve(__dirname, 'src/utils'),
-        images: path.resolve(__dirname, 'src/assets/images'),
         graphql: path.resolve(__dirname, 'src/graphql'),
         hooks: path.resolve(__dirname, 'src/hooks'),
         theme: path.resolve(__dirname, 'src/theme'),
