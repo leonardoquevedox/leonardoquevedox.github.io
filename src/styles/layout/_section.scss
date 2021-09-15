@@ -8,6 +8,11 @@ article {
   overflow: hidden;
   transition-property: all;
   transition-duration: 500ms;
+  margin: auto;
+
+  &:not(.max-width) {
+    max-width: 600px;
+  }
 
   img {
     width: 100%;
