@@ -3,8 +3,6 @@ import Helmet from 'react-helmet'
 
 import seo from 'config/seo'
 
-import '../../styles/main.scss'
-
 const SEO = () => {
   const { title, description } = seo
 

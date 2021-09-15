@@ -1,14 +1,11 @@
 import React from 'react'
-
 import PropTypes from 'prop-types'
 import clsx from 'clsx'
-import { useSectionsContext } from 'context/SectionsContext'
 
-import './styles.scss'
+import { useSectionsContext } from 'context/SectionsContext'
 
 const Section = ({ id, title, children }) => {
   const { hasOpenSection, currentSection, handleSectionClosure } = useSectionsContext()
-
   return (
     <article
       className={clsx('app-section', {

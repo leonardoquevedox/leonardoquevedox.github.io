@@ -23,13 +23,11 @@
   )
 );
 
-// Base.
-
+// --- Base styles
 @import 'base/page';
 @import 'base/typography';
 
-// Component.
-
+// --- Component styles
 @import 'components/form';
 @import 'components/box';
 @import 'components/icon';
@@ -38,9 +36,9 @@
 @import 'components/table';
 @import 'components/button';
 
-// Layout.
-
-@import 'layout/wrapper';
-@import 'layout/header';
-@import 'layout/main';
+// --- Layout styles
+@import 'layout/bg';
 @import 'layout/footer';
+@import 'layout/header';
+@import 'layout/section';
+@import 'layout/wrapper';

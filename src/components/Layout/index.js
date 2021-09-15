@@ -8,7 +8,7 @@ import Footer from 'components/Footer'
 
 import { SectionsContextProvider } from 'context/SectionsContext'
 
-import '../../styles/main.scss'
+import '../../styles/index.scss'
 
 const Layout = ({ children }) => (
   <SectionsContextProvider>
