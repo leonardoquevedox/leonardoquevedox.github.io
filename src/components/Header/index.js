@@ -4,10 +4,10 @@ import sections from 'config/sections'
 import { useSectionsContext } from 'context/SectionsContext'
 
 const Header = () => {
-  const { isLoading, handleSectionOpening } = useSectionsContext()
+  const { handleSectionOpening } = useSectionsContext()
 
   return (
-    <header style={isLoading ? { display: 'none' } : {}}>
+    <header>
       <div className="logo">
         <span className="icon fa fa-jedi fa-2x" />
       </div>

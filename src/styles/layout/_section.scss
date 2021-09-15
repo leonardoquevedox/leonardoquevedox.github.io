@@ -3,13 +3,26 @@
   width: 100%;
   background-color: rgba(0, 0, 0, 0.2);
   border-radius: 8px;
-  padding: 2rem;
   opacity: 0;
+  padding: 2rem;
+  overflow: hidden;
+  transition-property: all;
+  transition-duration: 500ms;
 
   img {
     width: 100%;
     min-height: 300px;
     object-fit: cover;
+  }
+
+  &:not(.active) {
+    padding: 0;
+    max-height: 0;
+  }
+
+  &.active {
+    opacity: 1;
+    max-height: 9999px;
   }
 
   .close {
@@ -22,6 +35,8 @@
     cursor: pointer;
     text-indent: 4rem;
     white-space: nowrap;
+    border: none;
+    background: transparent;
 
     &:before {
       @include vendor('transition', 'background-color #{_duration(transition)} ease-in-out');

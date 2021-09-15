@@ -5,13 +5,13 @@ import clsx from 'clsx'
 import { useSectionsContext } from 'context/SectionsContext'
 
 const Wrapper = ({ children }) => {
-  const { isLoading, hasSelectedSection } = useSectionsContext()
+  const { isLoading, currentSection } = useSectionsContext()
 
   return (
     <div
       className={clsx('body', {
         'is-loading': isLoading,
-        'is-article-visible': hasSelectedSection,
+        'is-article-visible': currentSection && currentSection !== '',
       })}
     >
       <div id="wrapper">{children}</div>
