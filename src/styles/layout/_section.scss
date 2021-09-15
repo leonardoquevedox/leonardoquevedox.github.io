@@ -10,7 +10,7 @@ article {
   transition-duration: 500ms;
   margin: auto;
 
-  &:not(.max-width) {
+  &:not(.fullwidth) {
     max-width: 600px;
   }
 

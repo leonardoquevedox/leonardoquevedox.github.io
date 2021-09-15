@@ -8,10 +8,10 @@ import posts from 'data/posts'
 import videos from 'data/videos'
 import ContentCard from './ContentCard'
 
-import './ContentSection.scss'
+import './styles.scss'
 
 const ContentSection = () => (
-  <Section data={sections.content}>
+  <Section data={sections.content} fullwidth>
     {posts &&
       posts.items &&
       posts.items.map((post) => (
