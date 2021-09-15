@@ -1,6 +1,5 @@
 /* BG */
-
-#bg {
+#site-bg {
   @include vendor('transform', 'scale(1.0)');
   backface-visibility: hidden;
   position: fixed;
