@@ -2,12 +2,14 @@ import React from 'react'
 
 import cover from 'assets/img/contact.jpg'
 
+import sections from 'config/sections'
+
 import profiles from 'data/profiles'
 
 import Section from '../../Section'
 
 const ContactSection = () => (
-  <Section id="contact">
+  <Section data={sections.contact}>
     <span className="image main">
       <img src={cover} alt="" />
     </span>

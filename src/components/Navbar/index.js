@@ -1,15 +1,15 @@
 import React from 'react'
 
-import sections from 'config/sections'
 import { useSectionsContext } from 'context/SectionsContext'
+
+import sections from 'config/sections'
 
 const Navbar = () => {
   const { handleSectionOpening } = useSectionsContext()
-
   return (
     <nav>
       <ul>
-        {sections.map(
+        {Object.values(sections).map(
           (section) =>
             section && (
               <li key={section.href}>

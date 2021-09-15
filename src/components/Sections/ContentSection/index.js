@@ -2,12 +2,14 @@ import React from 'react'
 
 import Section from 'components/Section'
 
+import sections from 'config/sections'
+
 import posts from 'data/posts'
 
 import './ContentSection.scss'
 
 const ContentSection = () => (
-  <Section id="content" title="Publicações">
+  <Section data={sections.content}>
     {posts &&
       posts.items &&
       posts.items.map((post) => (

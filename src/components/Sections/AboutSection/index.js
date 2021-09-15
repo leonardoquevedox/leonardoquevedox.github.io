@@ -2,10 +2,12 @@ import React from 'react'
 
 import cover from 'assets/img/author.jpg'
 
+import sections from 'config/sections'
+
 import Section from '../../Section'
 
 const About = () => (
-  <Section id="about" title="Sobre">
+  <Section data={sections.about}>
     <span className="image main">
       <img src={cover} alt="" />
     </span>

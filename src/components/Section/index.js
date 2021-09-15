@@ -4,16 +4,16 @@ import clsx from 'clsx'
 
 import { useSectionsContext } from 'context/SectionsContext'
 
-const Section = ({ id, title, children }) => {
+const Section = ({ data, children }) => {
   const { hasOpenSection, currentSection, handleSectionClosure } = useSectionsContext()
   return (
     <article
       className={clsx('app-section', {
         visible: hasOpenSection,
-        active: currentSection === id,
+        active: currentSection === data.href,
       })}
     >
-      <h2 className="major">{title}</h2>
+      <h2 className="major">{data.label}</h2>
       <button
         className="close"
         onClick={() => {
@@ -28,15 +28,16 @@ const Section = ({ id, title, children }) => {
 }
 
 Section.propTypes = {
-  id: PropTypes.string,
-  title: PropTypes.node,
   children: PropTypes.node,
+  data: PropTypes.shape({ href: PropTypes.string, label: PropTypes.node }),
 }
 
 Section.defaultProps = {
-  id: null,
-  title: '',
   children: null,
+  data: {
+    href: '',
+    label: '',
+  },
 }
 
 export default Section
