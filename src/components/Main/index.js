@@ -3,7 +3,7 @@ import PropTypes from 'prop-types'
 
 import './styles.scss'
 
-const Main = ({ children }) => <main id="main">{children}</main>
+const Main = ({ children }) => <main>{children}</main>
 
 Main.propTypes = {
   children: PropTypes.node.isRequired,

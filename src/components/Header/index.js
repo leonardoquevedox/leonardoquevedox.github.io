@@ -7,7 +7,7 @@ const Header = () => {
   const { isLoading, handleSectionOpening } = useSectionsContext()
 
   return (
-    <header id="header" style={isLoading ? { display: 'none' } : {}}>
+    <header style={isLoading ? { display: 'none' } : {}}>
       <div className="logo">
         <span className="icon fa fa-jedi fa-2x" />
       </div>
