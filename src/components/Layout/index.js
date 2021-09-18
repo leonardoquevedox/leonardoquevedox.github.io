@@ -1,12 +1,12 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 
-import Header from 'components/Layout/Header'
-import Wrapper from 'components/Layout/Wrapper'
-import Main from 'components/Main'
-import Footer from 'components/Layout/Footer'
-
 import { SectionsContextProvider } from 'context/SectionsContext'
+
+import Header from './Header'
+import Wrapper from './Wrapper'
+import Main from './Main'
+import Footer from './Footer'
 
 import '../../styles/index.scss'
 
