@@ -10,7 +10,6 @@ import './styles.scss'
 
 const Wrapper = ({ children }) => {
   const { isLoading, currentSection } = useSectionsContext()
-
   return (
     <div
       className={clsx('app-layout', {
