@@ -4,7 +4,7 @@ import clsx from 'clsx'
 
 import { useSectionsContext } from 'context/SectionsContext'
 
-import Background from 'components/Background'
+import Background from 'components/Layout/Background'
 
 import './styles.scss'
 
