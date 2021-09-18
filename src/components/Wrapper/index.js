@@ -14,7 +14,7 @@ const Wrapper = ({ children }) => {
         'is-article-visible': currentSection && currentSection !== '',
       })}
     >
-      <div id="site-wrapper">{children}</div>
+      <div className="app-wrapper">{children}</div>
       <div id="site-bg" />
     </div>
   )

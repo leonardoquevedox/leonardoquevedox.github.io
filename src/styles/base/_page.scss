@@ -1,20 +1,13 @@
-@include breakpoint(xsmall) {
-  html,
-  body {
-    min-width: 320px;
-  }
-}
-
 body {
   background: _palette(bg);
 
-  .body {
+  .app-body {
     max-width: 100vw;
     overflow: hidden;
   }
 
   &.is-loading,
-  .body.is-loading,
+  .app-body.is-loading,
   &.is-switching {
     *,
     *:before,

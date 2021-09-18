@@ -44,14 +44,14 @@
     z-index: 1;
   }
 
-  .body.is-article-visible & {
+  .app-body.is-article-visible & {
     &:after {
       @include vendor('transform', 'scale(1.0825)');
       @include vendor('filter', 'blur(0.2rem)');
     }
   }
 
-  .body.is-loading & {
+  .app-body.is-loading & {
     &:before {
       background-color: _palette(bg-alt);
     }

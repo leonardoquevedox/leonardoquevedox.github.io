@@ -151,14 +151,14 @@ header {
     }
   }
 
-  .body.is-article-visible & {
+  .app-body.is-article-visible & {
     @include vendor('transform', 'scale(0.95)');
     @include vendor('filter', 'blur(0.1rem)');
     opacity: 0;
     max-height: 0;
   }
 
-  .body.is-loading & {
+  .app-body.is-loading & {
     > * {
       opacity: 0;
     }

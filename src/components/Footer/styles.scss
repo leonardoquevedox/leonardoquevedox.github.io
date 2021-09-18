@@ -1,0 +1,35 @@
+footer.app-footer {
+  transition: all 0.325s ease-in-out;
+  width: 100%;
+  max-width: 100%;
+  margin-top: 2rem;
+  text-align: center;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  bottom: 16px;
+  padding: 16px;
+  width: 100vw;
+  text-align: center;
+  display: flex;
+  justify-content: center;
+
+  .copyright {
+    letter-spacing: 0.2rem;
+    font-size: 0.6rem;
+    opacity: 0.75;
+    margin-bottom: 0;
+    text-transform: uppercase;
+  }
+
+  .app-body.is-article-visible & {
+    transform: scale(0.95);
+    filter: blur(0.1rem);
+    opacity: 0;
+    opacity: 0;
+  }
+
+  .app-body.is-loading & {
+    opacity: 0;
+  }
+}
