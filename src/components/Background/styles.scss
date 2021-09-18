@@ -1,6 +1,5 @@
-/* BG */
-#site-bg {
-  @include vendor('transform', 'scale(1.0)');
+.app-background {
+  transform: scale(1);
   backface-visibility: hidden;
   position: fixed;
   top: 0;
@@ -21,10 +20,10 @@
   }
 
   &:before {
-    @include vendor('transition', 'background-color #{_duration(bg)} ease-in-out');
-    @include vendor('transition-delay', '#{_duration(intro)}');
-    background-image: linear-gradient(to top, #{_palette(bg-overlay)}, #{_palette(bg-overlay)}),
-      url('../assets/img/overlay.png');
+    transition: background-color 2.5s ease-in-out;
+    transition-delay: 0.75s;
+    background-image: linear-gradient(to top, rgba(19, 21, 25, 0.9), rgba(19, 21, 25, 0.9)),
+      url('assets/img/overlay.png');
     background-size: auto, 256px 256px;
     background-position: center, center;
     background-repeat: no-repeat, repeat;
@@ -32,12 +31,9 @@
   }
 
   &:after {
-    @include vendor('transform', 'scale(1.125)');
-    @include vendor(
-      'transition',
-      ('transform #{_duration(article)} ease-in-out', 'filter #{_duration(article)} ease-in-out')
-    );
-    background-image: url('../assets/img/bg.jpg');
+    transform: scale(1.125);
+    transition: transform 0.325s ease-in-out, filter 0.325s ease-in-out;
+    background-image: url('assets/img/bg.jpg');
     background-position: center;
     background-size: cover;
     background-repeat: no-repeat;
@@ -46,8 +42,8 @@
 
   .app-layout.is-article-visible & {
     &:after {
-      @include vendor('transform', 'scale(1.0825)');
-      @include vendor('filter', 'blur(0.2rem)');
+      transform: scale(1.0825);
+      filter: blur(0.2rem);
     }
   }
 

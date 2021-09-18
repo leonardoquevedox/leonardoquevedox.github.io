@@ -1,4 +1,6 @@
-.app-body {
+.app-layout {
+  max-width: 100vw;
+  overflow: hidden;
   .app-wrapper {
     display: flex;
     flex-direction: column;
@@ -11,9 +13,5 @@
     margin: auto;
     padding: 2rem;
     z-index: 3;
-
-    &.page {
-      justify-content: flex-start;
-    }
   }
 }

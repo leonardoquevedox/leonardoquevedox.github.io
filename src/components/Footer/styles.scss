@@ -22,14 +22,14 @@ footer.app-footer {
     text-transform: uppercase;
   }
 
-  .app-body.is-article-visible & {
+  .app-layout.is-article-visible & {
     transform: scale(0.95);
     filter: blur(0.1rem);
     opacity: 0;
     opacity: 0;
   }
 
-  .app-body.is-loading & {
+  .app-layout.is-loading & {
     opacity: 0;
   }
 }

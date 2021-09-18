@@ -24,11 +24,9 @@
 );
 
 // --- Base styles
-@import 'base/page';
-@import 'base/typography';
+@import 'base';
 
 // --- Component styles
-@import 'components/form';
 @import 'components/icon';
 @import 'components/image';
 @import 'components/list';
@@ -37,4 +35,3 @@
 @import 'layout/bg';
 @import 'layout/header';
 @import 'layout/section';
-@import 'layout/wrapper';
