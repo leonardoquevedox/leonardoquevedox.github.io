@@ -13,10 +13,10 @@ const ContactSection = () => (
     <span className="image main">
       <img src={cover} alt="" />
     </span>
-    <p>
+    {/* <p style={{ fontSize: '1.25rem' }}>
       Formulários de contato? Formais demais! <br />
       Só chamar em um dos canais abaixo ;)
-    </p>
+    </p> */}
     <ul className="icons">
       {profiles.map(
         (profile) =>
